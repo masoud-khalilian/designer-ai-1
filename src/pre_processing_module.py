@@ -2,6 +2,7 @@ from typing import Any
 import spacy
 import re
 
+from src.prompt import Prompt
 from src.module import Process
 
 class RemoveSpace(Process):
@@ -14,11 +15,12 @@ class RemoveSpace(Process):
         prompt.set_prompt(cleaned_string)
 
 
+
 class Summarize(Process):
     def __init__(self):
         super().__init__('summarize')
 
-    def __call__(self, prompt):
+    def __call__(self, prompt:Prompt):
         # Load SpaCy model for English
         nlp = spacy.load("en_core_web_sm")
 
@@ -36,3 +38,18 @@ class Summarize(Process):
         summarized_text = ' '.join(sentence for sentence, _ in selected_sentences)
 
         prompt.set_prompt(summarized_text)
+
+
+
+class PropmtGeneration(Process):
+    def __init__(self,overhead=''):
+        super().__init__('propmt generation 1')
+        self.overhead = overhead
+    def __call__(self, prompt:Prompt):
+        if self.overhead == '':
+            self.overhead = ('Below is a Description of a datase read it carefully and give and your understanding if you want' 
+                ' to make it an Entity relation model: ')
+
+        prompt.set_prompt(f'{self.overhead}{prompt.get_prompt()}')
+
+

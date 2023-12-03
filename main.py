@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 
 from src.prompt import Prompt
-from src.pre_processing_module import RemoveSpace,Summarize
+from src.pre_processing_module import RemoveSpace,Summarize,PropmtGeneration
 
 load_dotenv()
 api_key = os.getenv("API_KEY")
@@ -16,10 +16,11 @@ def main():
 
     remove_space = RemoveSpace() 
     summarize = Summarize()
-
+    generation1 = PropmtGeneration()
     module_list = [
         remove_space,
-        # summarize
+        # summarize,
+        generation1
         ]
     prompt.execute_modules(module_list)
 
