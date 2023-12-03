@@ -1,11 +1,8 @@
+from typing import Any
 import spacy
 import re
 
-def remove_extra_spaces(input_string):
-    # Use a regular expression to replace multiple spaces with a single space
-    cleaned_string = re.sub(' +', ' ', input_string)
-    
-    return cleaned_string
+from src.module import Process
 
 def extractive_summarize(input_text):
     # Load SpaCy model for English
@@ -33,3 +30,12 @@ def input_cleaner(c_input):
 
     clean_input = s_i
     return clean_input
+
+class RemoveSpace(Process):
+    def __init__(self):
+        super().__init__('remove space')
+    
+    def __call__(self, prompt):
+        # Use a regular expression to replace multiple spaces with a single space
+        cleaned_string = re.sub(r'\s+', ' ', prompt.get_prompt())
+        prompt.set_prompt(cleaned_string)

@@ -2,8 +2,7 @@ from dotenv import load_dotenv
 import os
 
 from src.prompt import Prompt
-from src.input import get_input
-from src.pre_processing_module import input_cleaner
+from src.pre_processing_module import RemoveSpace
 
 load_dotenv()
 api_key = os.getenv("API_KEY")
@@ -11,7 +10,16 @@ api_key = os.getenv("API_KEY")
 def main():
     print("Welcome to Designer-ai-1 !!!")
     prompt = Prompt()
-    prompt.get_current_prompt()
+    prompt.get_input()
+    prompt.display_current_prompt()
+
+
+    remove_space = RemoveSpace() 
+    module_list = [remove_space]
+    prompt.execute_modules(module_list)
+
+    prompt.display_current_prompt()
+
 
 if __name__ == "__main__":
     main()
