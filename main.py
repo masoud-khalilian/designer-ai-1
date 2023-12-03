@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 
 from src.prompt import Prompt
-from src.pre_processing_module import RemoveSpace
+from src.pre_processing_module import RemoveSpace,Summarize
 
 load_dotenv()
 api_key = os.getenv("API_KEY")
@@ -15,7 +15,12 @@ def main():
 
 
     remove_space = RemoveSpace() 
-    module_list = [remove_space]
+    summarize = Summarize()
+
+    module_list = [
+        remove_space,
+        # summarize
+        ]
     prompt.execute_modules(module_list)
 
     prompt.display_current_prompt()
