@@ -9,4 +9,4 @@ class ErModel():
         return self.model
     
     def display_model(self)->None:
-        print(self.model)    
+        print(self.model)

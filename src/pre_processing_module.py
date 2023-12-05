@@ -41,15 +41,11 @@ class Summarize(Process):
 
 
 
-class PropmtGeneration(Process):
-    def __init__(self,overhead=''):
-        super().__init__('propmt generation 1')
+class PromptGeneration(Process):
+    def __init__(self,name,overhead=''):
+        super().__init__(name)
         self.overhead = overhead
     def __call__(self, prompt:Prompt):
-        if self.overhead == '':
-            self.overhead = ('Below is a Description of a datase read it carefully and give and your understanding if you want' 
-                ' to make it an Entity relation model: ')
-
         prompt.set_prompt(f'{self.overhead}{prompt.get_prompt()}')
 
 

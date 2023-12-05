@@ -8,7 +8,7 @@ class Prompt:
     def get_prompt(self):
         return self.prompt
     
-    def set_prompt(self,p):
+    def set_prompt(self,p:str):
         self.prompt = p
 
     def get_input(self):

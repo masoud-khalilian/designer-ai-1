@@ -1,0 +1,2 @@
+We want to create the database to monitor the chain of stores.
+each stores has a name.

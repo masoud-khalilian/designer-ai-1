@@ -41,15 +41,16 @@ from src.module import Process
 
 
 class CallOpenAI(Process):
-    def __init__(self,overhead=''):
+    def __init__(self,prompt='',system_prompt=''):
         super().__init__('call open ai api')
         load_dotenv()
         self.open_api_key = os.getenv("API_KEY")
-        self.overhead = overhead
+        self.prompt = prompt
         self.response = ''
         self.answer = ''
-    
-    def __call__(self, er:ErModel):
+        self.system_prompt = system_prompt
+
+    def __call__(self):
 
         client = OpenAI(
             # This is the default and can be omitted
@@ -58,15 +59,11 @@ class CallOpenAI(Process):
 
         completion = client.chat.completions.create(
             messages=[
-                {"role": "system", "content": "This is a description of an database act as a entity relation model guru."},
-                {"role": "user", "content": f'{self.overhead} give the answer in less then 60 word'}
+                {"role": "system", "content": f'{self.system_prompt}'},
+                {"role": "user", "content": f'{self.prompt} give the answer in less then 60 word'}
             ],
-            model="gpt-3.5-turbo",
+            model="gpt-3.5-turbo-1106",
         )
-
-        # print(completion)
-        # print(completion.choices[0].message.content)
-
         self.response = completion.choices[0].message
         self.answer = completion.choices[0].message.content
-        er.set_model(completion.choices[0].message.content)
+        return completion.choices[0].message.content
