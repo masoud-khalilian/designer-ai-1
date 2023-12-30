@@ -1,0 +1,192 @@
+{
+    "_main": {
+        "step": "erDesign",
+        "restructuringHappened": false,
+        "draftSaved": true,
+        "showMenu": false,
+        "showModal": false,
+        "uid": 1
+    },
+    "erDesign": {
+        "model": {
+            "uid": 7,
+            "erCode": "",
+            "sqlCode": "",
+            "itemsArray": [
+                {
+                    "__type": "Entity",
+                    "_id": 1,
+                    "_name": "ENTITY1",
+                    "_x": -41,
+                    "_y": 149,
+                    "_mag": false
+                },
+                {
+                    "__type": "Relationship",
+                    "_id": 2,
+                    "_name": "RELATIONSHIP2",
+                    "_x": 264,
+                    "_y": 281
+                },
+                {
+                    "__type": "Entity",
+                    "_id": 3,
+                    "_name": "ENTITY3",
+                    "_x": 0,
+                    "_y": 444,
+                    "_mag": false
+                },
+                {
+                    "__type": "Participation",
+                    "_id": 4,
+                    "_entityId": 1,
+                    "_tableId": null,
+                    "_relationshipId": 2,
+                    "_cardinality": "_",
+                    "_externalIdentifier": false,
+                    "_role": ""
+                },
+                {
+                    "__type": "Participation",
+                    "_id": 5,
+                    "_entityId": 3,
+                    "_tableId": null,
+                    "_relationshipId": 2,
+                    "_cardinality": "_",
+                    "_externalIdentifier": false,
+                    "_role": ""
+                },
+                {
+                    "__type": "Attribute",
+                    "_id": 6,
+                    "_name": "Attribute6",
+                    "_identifier": false,
+                    "_externalIdentifier": false,
+                    "_cardinality": "1_1",
+                    "_parentId": 1,
+                    "_x": -144,
+                    "_y": 0
+                }
+            ],
+            "itemsMap": {
+                "1": {
+                    "__type": "Entity",
+                    "_id": 1,
+                    "_name": "ENTITY1",
+                    "_x": -41,
+                    "_y": 149,
+                    "_mag": false
+                },
+                "2": {
+                    "__type": "Relationship",
+                    "_id": 2,
+                    "_name": "RELATIONSHIP2",
+                    "_x": 264,
+                    "_y": 281
+                },
+                "3": {
+                    "__type": "Entity",
+                    "_id": 3,
+                    "_name": "ENTITY3",
+                    "_x": 0,
+                    "_y": 444,
+                    "_mag": false
+                },
+                "4": {
+                    "__type": "Participation",
+                    "_id": 4,
+                    "_entityId": 1,
+                    "_tableId": null,
+                    "_relationshipId": 2,
+                    "_cardinality": "_",
+                    "_externalIdentifier": false,
+                    "_role": ""
+                },
+                "5": {
+                    "__type": "Participation",
+                    "_id": 5,
+                    "_entityId": 3,
+                    "_tableId": null,
+                    "_relationshipId": 2,
+                    "_cardinality": "_",
+                    "_externalIdentifier": false,
+                    "_role": ""
+                },
+                "6": {
+                    "__type": "Attribute",
+                    "_id": 6,
+                    "_name": "Attribute6",
+                    "_identifier": false,
+                    "_externalIdentifier": false,
+                    "_cardinality": "1_1",
+                    "_parentId": 1,
+                    "_x": -144,
+                    "_y": 0
+                }
+            }
+        },
+        "edited": true,
+        "sceneResetToken": 1703767601232,
+        "selectedItemId": null,
+        "selectedTool": null,
+        "oldRenamingValue": "",
+        "renamingValue": "",
+        "showRenamingInput": false,
+        "showRenamingRoleInput": false,
+        "showCardinalityMenu": false,
+        "showGeneralizationTypeMenu": false,
+        "showExportMenu": false
+    },
+    "erRestructuring": {
+        "model": {
+            "uid": 1,
+            "erCode": "",
+            "sqlCode": "",
+            "itemsArray": [],
+            "itemsMap": {}
+        },
+        "sceneResetToken": 1703767601232,
+        "selectedItemId": null,
+        "oldRenamingValue": "",
+        "renamingValue": "",
+        "showRenamingInput": false,
+        "showRenamingRoleInput": false,
+        "showMultivalueAttributeMenu": false,
+        "showCompositeAttributeMenu": false,
+        "showGeneralizationMenu": false
+    },
+    "erTranslation": {
+        "model": {
+            "uid": 1,
+            "erCode": "",
+            "sqlCode": "",
+            "itemsArray": [],
+            "itemsMap": {}
+        },
+        "sceneResetToken": 1703767601232,
+        "selectedItemId": null,
+        "oldRenamingValue": "",
+        "renamingValue": "",
+        "showRenamingInput": false,
+        "showOneToManyTypeBRelationshipMenu": false,
+        "showOneToOneTypeBRelationshipMenu": false,
+        "showOneToOneTypeCRelationshipMenu": false
+    },
+    "schemaDesign": {
+        "model": {
+            "uid": 1,
+            "erCode": "",
+            "sqlCode": "",
+            "itemsArray": [],
+            "itemsMap": {}
+        },
+        "sceneResetToken": 1703767601232,
+        "selectedItemId": null,
+        "oldRenamingValue": "",
+        "renamingValue": "",
+        "showRenamingInput": false,
+        "showDataTypeOptions": false,
+        "showReorderingMenu": false,
+        "showExportMenu": false
+    }
+}

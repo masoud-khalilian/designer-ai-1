@@ -10,3 +10,12 @@ class ErModel():
     
     def display_model(self)->None:
         print(self.model)
+
+    def transform_items_array_to_map(itemsArray):
+        itemsMap = {}
+
+        for item in itemsArray:
+            item_id = item["_id"]
+            itemsMap[item_id] = item
+
+        return itemsMap
