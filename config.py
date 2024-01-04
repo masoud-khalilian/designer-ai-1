@@ -3,7 +3,7 @@ from enum import Enum
 
 class config_prompt(Enum):
     user_1 = 'give me Entity relation model:'
-    system_1 = '1-name of the Entity next line the attributes if primary key put infront of them (PK) next line the name of relationship and what sort of relationships is then start from the next entity like 2-entity2'
+    system_1 = '/* Entities */ for each detected entity do : \nentity name of entity* { name of attributes of the entity seperated with \n} \n\n , /* Relationships */ for each relationship do: \nrelationship (name of the relationship) ( entity1: relationship type, entity2: relationship type){ name of the attributes of the relationship seperated by \n} *relationship types are one of : zero...many, one...many, one...one, many...many * \n\n  /* Generalizations */ \nParententity <= {\n name of the child entities}(type of generalization)'
 
     api_call_system2 = "Return according to this example with 1-make sure all id must be incremental "
     strict_format = {

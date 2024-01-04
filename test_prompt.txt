@@ -12,4 +12,4 @@ For each store it is also requested to keep track of the managers who supervised
 
 3-
 We want a to create a database for bookstore wich has addressa and unique id which has many books in it each book 
-has name and isbn and could be sell by many book store
+has name and isbn and could be sell by many book store. a book can be philosophical or scientific
