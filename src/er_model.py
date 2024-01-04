@@ -69,18 +69,39 @@ class ErModel():
 
         return {}
 
-    def save_model(self, output_format):
+    def process_gp3_json_repsponse(self, output_format):
         coming_response = self.process_model(output_format)
         s1 = coming_response['itemsArray'].replace('\'', '\"')
         s2 = json.loads(s1)
+        return s2
 
+    def extract_and_convert_to_json(self, text=""):
+        if text == "":
+            text = self.model
+        # Define a regular expression pattern to match the item array structure
+        pattern = re.compile(r'"###itemsArray###":\s*(\[[^\]]*\])')
+
+        # Search for the pattern in the text
+        match = pattern.search(text)
+
+        # Check if a match is found
+        if match:
+            # Extract and return the contents of the item array
+            item_array_contents = match.group(1)
+            s = json.loads(item_array_contents)
+            return s  # Use eval to convert the string representation to a Python list
+        else:
+            # Return None if the pattern is not found
+            return None
+
+    def save_model(self, json_array_content, file_name="ER_model_final_response"):
         # load the place holder
         with open('json_placeholder.json', 'r') as jfile:
             place_holder = json.load(jfile)
 
-        place_holder["erDesign"]["model"]["itemsArray"] = s2
-        result = self.transform_items_array_to_map(s2)
+        place_holder["erDesign"]["model"]["itemsArray"] = json_array_content
+        result = self.transform_items_array_to_map(json_array_content)
         place_holder["erDesign"]["model"]["itemsMap"] = result
 
-        with open('ER_model_final_response.json', 'w') as new_file:
+        with open(f'{file_name}.json', 'w') as new_file:
             json.dump(place_holder, new_file, indent=2)
