@@ -45,17 +45,17 @@ class config_prompt(Enum):
                 "_role": ""
             },
             {
-                "__type":"Generalization",
-                "_id":"number id which must be unique between all element of itemsArray",
-                "_type":"shows the type of generalization, (example: a flight ticket's generalization type is 'class' which refers to the ticket's 'first_class', 'business_class' and 'economy_class'.)",
-                "_entityId":"the id corresponding to the parent of the generalization. (in case of flight ticket should return the '_id' of 'ticket' entity)"
+                "__type": "Generalization",
+                "_id": "number id which must be unique between all element of itemsArray",
+                "_type": "shows the type of generalization, (example: a flight ticket's generalization type is 'class' which refers to the ticket's 'first_class', 'business_class' and 'economy_class'.)",
+                "_entityId": "the id corresponding to the parent of the generalization. (in case of flight ticket should return the '_id' of 'ticket' entity)"
             },
             {
-                "__type":"GeneralizationChild",
-                "_id":"number id which must be unique between all element of itemsArray",
-                "_entityId":"indicates the '_id' of child entity (in case of flight tickets, it would be the id of 'business_class' or 'first_class' or 'economy class')",
-                "_generalizationId":"refers to the '_id' of the 'Generalization'"
+                "__type": "GeneralizationChild",
+                "_id": "number id which must be unique between all element of itemsArray",
+                "_entityId": "indicates the '_id' of child entity (in case of flight tickets, it would be the id of 'business_class' or 'first_class' or 'economy class')",
+                "_generalizationId": "refers to the '_id' of the 'Generalization'"
             }
-            ]} 
+        ]}
 
     delimiter = '###'
