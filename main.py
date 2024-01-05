@@ -24,7 +24,7 @@ def main():
         jobName = "GPT3"
         print(f"starting {jobName}")
         preliminary_er = call_api.call_gpt3(
-            prompt=init_prompt.get_prompt(), system_prompt=cfg.system_1.value)
+            prompt=init_prompt.get_prompt(), system_prompt=cfg.system_1.value, custom_model="ft:gpt-3.5-turbo-1106:personal::8dYiTRrF")
         log_preliminary_er(preliminary_er, "preliminary_er_GPT3")
 
         print('We have recieved your preliminary ER from the llm.')
@@ -35,9 +35,8 @@ def main():
         print('We prepared prelimnary er and our json format. Now we ask llm to give us the array.')
 
         json_array = call_api.call_gpt3(prompt=second_prompt.get_prompt(
-        ), system_prompt=cfg.api_call_system2.value + output_format_prompt)
+        ), system_prompt=cfg.api_call_system2.value + output_format_prompt, custom_model="ft:gpt-3.5-turbo-1106:personal::8dZ284fX")
         print('We have got an array from the llm now we are going to parse it so you can upload it to website.')
-
         er_model = ErModel(json_array)
         res = er_model.extract_and_convert_to_json()
         er_model.save_model(res, file_name=f"er_model_{jobName}")

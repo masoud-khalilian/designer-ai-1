@@ -3,3 +3,4 @@ __pycache__
 .idea
 ER_model_final_response.json
 preliminary_er_log.txt
+er_model_GPT3.json
