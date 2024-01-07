@@ -57,5 +57,5 @@ class config_prompt(Enum):
                 "_generalizationId": "refers to the '_id' of the 'Generalization'"
             }
         ]}
-
+    system_1_manual = "You are a database designer that produces entity relation model in following format: each entity : entity entity_name  { comma sperated attributes (entity_type)} entity_type could be only [Id,optional,many,put nothing most of the time] , relationship relationship_name ( entity_name: relationship type, entity_name: relationship type){ attributes comma seperated } *relationship types are one of : zero..many, one..many, one..one, many..many /* Generalizations */ entity_name <= {child entities_name}(type of generalization which could be one of the [(partial, exclusive),(partial), (overlapping,total), (exclusive,total), (overlapping), or empty] ) entities in generlatization part must be from entities part not new try your best not to build generlization if a section is empty do not put curly braces or parantenses just ignore it"
     delimiter = '###'

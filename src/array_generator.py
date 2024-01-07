@@ -3,8 +3,6 @@ import re
 import random
 import numpy as np
 
-from er_model import ErModel
-
 
 def find_entity_id(name, data):
     for item in data:
@@ -115,8 +113,6 @@ def get_attribute_cardinality(input_string):
 
 def process_tuple_entities(input_tuple):
     global last_element_id_global
-    print(type(input_tuple))
-    print(input_tuple)
 
     result_list = np.array([])
     key, attributes = input_tuple
@@ -201,14 +197,8 @@ def extract_entities(input_string):
         brace_content = match[2].strip() if match[2] else None
         entity_data.append((entity_name, brace_content))
 
-        # word = match[0]
-        # curly_braces_structure = match[1].strip()
-        # print((word, curly_braces_structure))
-        # entity_data.append((word, curly_braces_structure))
-    print(entity_data)
     obj_entity_list = np.array([])
     for enity in enumerate(entity_data):
-        print(enity)
         if enity[1][1] is not None:
             j = process_tuple_entities(enity[1])
             last_element_id_global = last_element_id_global+1
@@ -372,17 +362,3 @@ class ArrayGenerator():
         last_element_id_global = 1
         array_json, cleanjson = self.transform_er_code()
         return array_json
-
-
-# er3 = '/* Entities */\nentity BOOK {\n    ISBN (id),\n    Name\n}\nentity BOOK_STORE {\n    Id (id),\n    Address\n}\n\n/* Relationships */\nrelationship HAS (\n    BOOK: one..one,\n    BOOK_STORE: one..many\n)'
-# er3 = "/* Entities */\nentity USER {\n    UCode (id),\n    Nickname,\n    Email,\n    Facebook_page (optional)\n}\nentity SUPPORTER {\n    Sponsorship_fee\n}\nentity MULTIMEDIA_CONTENT {\n    MCCode (external),\n    Name,\n    Description,\n    Keywords (multi)\n}\nentity AUDIO {\n    Duration\n}\nentity PICTURE {\n    Format\n}\nentity VIDEO {\n    Duration,\n    Resolution\n}\nentity TIME {\n    Date (id)\n}\n\n/* Relationships */\nrelationship PROVIDE (\n    USER: zero..many,\n    MULTIMEDIA_CONTENT: one..one external\n)\nrelationship CONNECT (\n    USER: zero..many,\n    TIME: one..many\n) {\n    Minutes\n}\n\n/* Generalizations */\nUSER <= {\n    SUPPORTER\n} (partial, exclusive)\nMULTIMEDIA_CONTENT <= {\n    AUDIO,\n    PICTURE,\n    VIDEO\n} (total, exclusive)"
-er3 = "/* Entities */\nentity CUSTOMER {\n    TaxCode (id),\n    CName,\n    CAddress,\n    email (optional)\n}\nentity PRIVATE\nentity COMPANY {\n    Vat,\n    PhoneNum (multi)\n}\nentity FORNITURE_MODEL {\n    MCode (id),\n    Size {\n        Height,\n        Width,\n        Depth\n    }\n}\nentity SUPPLIER {\n    VatNum (id),\n    SName,\n    PhoneNum\n}\nentity SALE_CONTRACT {\n    SCCode (id),\n    Date,\n    TotalPrice\n}\nentity VAN {\n    PlateNum (id),\n    Model,\n    RegistrationYear\n}\n\n/* Relationships */\nrelationship SUPPLIED_BY (\n    FORNITURE_MODEL: one..one,\n    SUPPLIER: zero..many\n)\nrelationship SIGNED_BY (\n    CUSTOMER: zero..many,\n    SALE_CONTRACT: one..one\n)\nrelationship INCLUDED_MODELS (\n    FORNITURE_MODEL: zero..many,\n    SALE_CONTRACT: one..many\n)\nrelationship DELIVERY (\n    SALE_CONTRACT: one..one,\n    VAN: one..one\n) {\n    DeliveryDate,\n    DeliveryTime\n}\n\n/* Generalizations */\nCUSTOMER <= {\n    PRIVATE,\n    COMPANY\n} (total, exclusive)"
-
-er_model = ErModel(er3)
-generator = ArrayGenerator(er3)
-json_array = generator.get_transformed_array()
-
-python_list = json_array.tolist()
-json_string = json.dumps(python_list)
-res = json.loads(json_string)
-er_model.save_model(res, file_name=f"er_model_manual")
