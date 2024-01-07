@@ -4,3 +4,4 @@ __pycache__
 ER_model_final_response.json
 preliminary_er_log.txt
 er_model_GPT3.json
+er_model_manual.json
