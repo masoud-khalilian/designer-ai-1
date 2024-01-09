@@ -3,6 +3,8 @@ import re
 import random
 import numpy as np
 
+# from er_model import ErModel
+
 
 def find_entity_id(name, data):
     for item in data:
@@ -47,7 +49,7 @@ def map_general_type(value):
         return "t_o"
     # Add more cases as needed
     else:
-        return "_"
+        return "p_e"
 
 
 def extract_name_relations(text):
@@ -141,10 +143,10 @@ def process_tuple_entities(input_tuple):
             "_externalIdentifier": is_e,
             "_parentId": entity_id,
             "_cardinality": cardinality,
-            "_x": random.randint(-700, 700),
-            "_y": random.randint(-700, 700)
-        }
+            "_x": random.randint(-210, 210),
+            "_y": random.choice([-120, 0, 120, 180, -180])
 
+        }
         attribute_dicts = np.append(attribute_dicts, att_dic)
     result_list = np.append(result_list, attribute_dicts)
     return result_list
@@ -271,9 +273,10 @@ def extract_relation_attribute(input_string, e_data):
                 "_externalIdentifier": False,
                 "_cardinality": "1_1",
                 "_parentId": find_relation_id(attribute[0], data=e_data),
-                "_x": random.randint(-700, 700),
-                "_y": random.randint(-700, 700)
+                "_x": random.randint(-210, 210),
+                "_y": random.choice([-120, 0, 120, 180, -180])
             }
+
             result.append(dic)
         return result
 
@@ -362,3 +365,16 @@ class ArrayGenerator():
         last_element_id_global = 1
         array_json, cleanjson = self.transform_er_code()
         return array_json
+
+
+# er3 = " entity PERSON { id (id), name (optional), surname (optional), phone (optional), email (optional), facebook (optional) } entity CONSULTATION { date (id), wear } entity BOOK { ISBN (id), title, chapters (multi) } entity SERIES_BOOK { SeriesName, BookNumber } entity AUTHOR { CodA (id), name, surname }  relationship MAKES ( PERSON: zero..many, CONSULTATION: one..one ) relationship OF ( BOOK: zero..many, CONSULTATION: one..one ) relationship AUTHORED_BY ( AUTHOR: one..many, BOOK: one..many )   BOOK <= { SERIES_BOOK } (optional, exclusive)"
+
+# er_model = ErModel(er3)
+# generator = ArrayGenerator(er3)
+# json_array = generator.get_transformed_array()
+
+# python_list = json_array.tolist()
+# json_string = json.dumps(python_list)
+# res = json.loads(json_string)
+# res = list(filter(lambda x: x is not None, res))
+# er_model.save_model(res, file_name=f"er_model_manual")
