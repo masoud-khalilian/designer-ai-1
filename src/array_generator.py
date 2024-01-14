@@ -5,7 +5,6 @@ import numpy as np
 
 # from er_model import ErModel
 
-
 def find_entity_id(name, data):
     for item in data:
         if "__type" in item and item["__type"] == "Entity" and "_name" in item and item["_name"] == name:
@@ -113,9 +112,8 @@ def get_attribute_cardinality(input_string):
         return keyword, '1_1'
 
 
-def process_tuple_entities(input_tuple):
+def process_tuple_entities(input_tuple,current_position):
     global last_element_id_global
-
     result_list = np.array([])
     key, attributes = input_tuple
     entity_id = last_element_id_global
@@ -123,8 +121,8 @@ def process_tuple_entities(input_tuple):
         "__type": "Entity",
         "_id": entity_id,
         "_name": key,
-        "_x": random.randint(-700, 700),
-        "_y": random.randint(-700, 700),
+        "_x": current_position[0],
+        "_y": current_position[1],
         "_mag": False
     }
     result_list = np.append(result_list, entity_dict)
@@ -198,21 +196,26 @@ def extract_entities(input_string):
         entity_name = match[0].strip()
         brace_content = match[2].strip() if match[2] else None
         entity_data.append((entity_name, brace_content))
-
+    current_position = [0,0]
     obj_entity_list = np.array([])
+    number = 2
     for enity in enumerate(entity_data):
+        direction = number % 2
+        current_position = [current_position[0] + (500 * (1-direction)),current_position[1] + (500 * direction)]
+        number += 1
         if enity[1][1] is not None:
-            j = process_tuple_entities(enity[1])
+            j = process_tuple_entities(enity[1],current_position)
             last_element_id_global = last_element_id_global+1
             obj_entity_list = np.append(obj_entity_list, j)
         else:
+            print(current_position[0],current_position[1])
             last_element_id_global = last_element_id_global+1
             obj_entity_list = np.append(obj_entity_list, [{
                 "__type": "Entity",
                 "_id": last_element_id_global,
                 "_name": enity[1][0],
-                "_x": random.randint(-700, 700),
-                "_y": random.randint(-700, 700),
+                "_x": current_position[0],
+                "_y": current_position[1],
                 "_mag": False
             }])
     return obj_entity_list
