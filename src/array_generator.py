@@ -155,20 +155,20 @@ def process_tuple_relations(input_tuple, enity_data):
     result_list = np.array([])
     key, attributes = input_tuple
     entity_id = last_element_id_global
-    entity_dict = {
-        "__type": "Relationship",
-        "_id": entity_id,
-        "_name": key,
-        "_x": random.randint(-700, 700),
-        "_y": random.randint(-700, 700)
-    },
-    result_list = np.append(result_list, entity_dict)
     attribute_list = attributes.split(', ')
     attribute_dicts = []
+    x = [0 for i in range(100)]
+    y = [0 for i in range(100)]
     for attribute in attribute_list:
         last_element_id_global = last_element_id_global+1
         name, rel_type, is_external = extract_name_relations(attribute)
         parent_id = find_entity_id(name, data=enity_data)
+        for i in enity_data:
+            if i["_id"] == parent_id:
+                print(i)
+                x[entity_id] += i["_x"]
+                y[entity_id] += i["_y"]
+            
         att_dic = {
             "__type": "Participation",
             "_id": last_element_id_global,
@@ -179,7 +179,14 @@ def process_tuple_relations(input_tuple, enity_data):
             "_externalIdentifier": is_external,
             "_role": ""
         },
-
+        entity_dict = {
+        "__type": "Relationship",
+        "_id": entity_id,
+        "_name": key,
+        "_x": x[entity_id]/2,
+        "_y": y[entity_id]/2
+        },
+        result_list = np.append(result_list, entity_dict)
         attribute_dicts = np.append(attribute_dicts, att_dic)
     result_list = np.append(result_list, attribute_dicts)
     return result_list
