@@ -164,7 +164,7 @@ def process_tuple_relations(input_tuple, enity_data):
     x = [0 for i in range(100)]
     y = [0 for i in range(100)]
     for attribute in attribute_list:
-        last_element_id_global = last_element_id_global+1
+        last_element_id_global = last_element_id_global + 1
         name, rel_type, is_external = extract_name_relations(attribute)
         parent_id = find_entity_id(name, data=enity_data)
         for i in enity_data:
@@ -234,7 +234,6 @@ def extract_relations(input_string, e_data):
     global last_element_id_global
     pattern = r'\brelationship\s+(\w+)\s*\{([^}]*)\}'
     matches = re.findall(pattern, input_string)
-    print("extract_relations", matches)
     relation_data = []
 
     for match in matches:
@@ -324,7 +323,6 @@ def extract_gerneralization(input_string, e_data):
         general_childs = []
         for g_child in result["entities"]:
             g_child = g_child.split(" ")[0]
-            print("generalizatin child ", g_child)
             # find the child if does not exist pass
             c_entity = find_entity_id(g_child, e_data)
             if c_entity == None:
@@ -344,7 +342,7 @@ def extract_gerneralization(input_string, e_data):
     return results if results else None
 
 
-class ArrayGenerator():
+class CustomArrayGenerator():
     global last_element_id_global
     last_element_id_global = 1
 
@@ -356,13 +354,14 @@ class ArrayGenerator():
         array_json = np.array([])
         er_code = self.er_code
         er_code = re.findall(r'```(.*?)```', er_code, re.DOTALL)
-        er_code = er_code[0]
+        if len(er_code) > 1:
+            er_code = er_code[0]
+        else:
+            er_code = self.er_code
+
         er_code = er_code.replace("\n", " ")
         er_code = re.sub(r'\s+', ' ', er_code)
         er_code = re.sub(r'/\*.*?\*/', '', er_code, flags=re.DOTALL)
-        print("\n")
-        print(er_code)
-        print("\n")
         entities_attributes = extract_entities(er_code)
         array_json = np.append(array_json, entities_attributes)
 
@@ -390,81 +389,81 @@ class ArrayGenerator():
         return array_json
 
 
-er3 = """
-Here is the ER model for the bookstore database:
+# er3 = """
+# Here is the ER model for the bookstore database:
 
-```
-entity Bookstore [id (id), address (null)]
-entity Book [isbn (id), name (null)]
-relationship sells {Bookstore : zero_many, Book : one_many}
-```
+# ```
+# entity Bookstore [id (id), address (null)]
+# entity Book [isbn (id), name (null)]
+# relationship sells {Bookstore : zero_many, Book : one_many}
+# ```
 
-Explanation:
+# Explanation:
 
-*   The `Bookstore` entity has two attributes: `id` (primary key) and `address`.
-*   The `Book` entity has two attributes: `isbn` (primary key) and `name`.
-*   The `Sells` relationship connects `Bookstore` and `Book` entities. A bookstore can sell many books, and a book can be sold by many bookstores.
-"""
+# *   The `Bookstore` entity has two attributes: `id` (primary key) and `address`.
+# *   The `Book` entity has two attributes: `isbn` (primary key) and `name`.
+# *   The `Sells` relationship connects `Bookstore` and `Book` entities. A bookstore can sell many books, and a book can be sold by many bookstores.
+# """
 
-er3 = """```
-entity Person [
-    id (id),
-    name (null),
-    surname (null),
-    telephone (null),
-    email (null),
-    facebook (null)
-]
-entity Book [
-    isbn (id),
-    title (null),
-    co-authors (multi)
-]
-entity Chapter [
-    title (null)
-]
-entity Author [
-    id (id),
-    name (null),
-    surname (null),
-    pseudonym (null)
-]
-entity Consultation [
-    person (id),
-    date (null),
-    book (id),
-    state_of_wear (null)
-]
-relationship Consultation {
-    Person : one_many,
-    Book : one_many
-}
-relationship Authorship {
-    Book : one_many,
-    Author : one_many
-}
-relationship Chapter {
-    Book : one_many,
-    Chapter : many_many
-}
-generalization Book [
-    Book (partial_exclusive),
-    Series (partial)
-]
-```
+# er3 = """```
+# entity Person [
+#     id (id),
+#     name (null),
+#     surname (null),
+#     telephone (null),
+#     email (null),
+#     facebook (null)
+# ]
+# entity Book [
+#     isbn (id),
+#     title (null),
+#     co-authors (multi)
+# ]
+# entity Chapter [
+#     title (null)
+# ]
+# entity Author [
+#     id (id),
+#     name (null),
+#     surname (null),
+#     pseudonym (null)
+# ]
+# entity Consultation [
+#     person (id),
+#     date (null),
+#     book (id),
+#     state_of_wear (null)
+# ]
+# relationship Consultation {
+#     Person : one_many,
+#     Book : one_many
+# }
+# relationship Authorship {
+#     Book : one_many,
+#     Author : one_many
+# }
+# relationship Chapter {
+#     Book : one_many,
+#     Chapter : many_many
+# }
+# generalization Book [
+#     Book (partial_exclusive),
+#     Series (partial)
+# ]
+# ```
 
-Explanation:
+# Explanation:
 
-*   **Person** entity: represents the person who registers at the museum and acquires a card. It has attributes such as id, name, surname, telephone, email, and facebook.
-*   **Book** entity: represents the books available at the museum. It has attributes such as isbn, title, and co-authors.
-*   **Chapter** entity: represents the titles of the chapters of the book.
-*   **Author** entity: represents the authors of the book. It has attributes such as id, name, surname, and pseudonym.
-*   **Consultation** entity: represents the consultation of a book by a person. It has attributes such as person, date, book, and state_of_wear.
-*   **Consultation** relationship: represents the relationship between Person and Book entities. A person can consult many books, and a book can be consulted by many people.
-*   **Authorship** relationship: represents the relationship between Book and Author entities. A book can have many authors, and an author can write many books.
-*   **Chapter** relationship: represents the relationship between Book and Chapter entities. A book can have many chapters, and a chapter can belong to many books.
-*   **Book** generalization: represents the generalization of Book entity into Series entity. A book can be part of a series, and a series can have many books.
-"""
+# *   **Person** entity: represents the person who registers at the museum and acquires a card. It has attributes such as id, name, surname, telephone, email, and facebook.
+# *   **Book** entity: represents the books available at the museum. It has attributes such as isbn, title, and co-authors.
+# *   **Chapter** entity: represents the titles of the chapters of the book.
+# *   **Author** entity: represents the authors of the book. It has attributes such as id, name, surname, and pseudonym.
+# *   **Consultation** entity: represents the consultation of a book by a person. It has attributes such as person, date, book, and state_of_wear.
+# *   **Consultation** relationship: represents the relationship between Person and Book entities. A person can consult many books, and a book can be consulted by many people.
+# *   **Authorship** relationship: represents the relationship between Book and Author entities. A book can have many authors, and an author can write many books.
+# *   **Chapter** relationship: represents the relationship between Book and Chapter entities. A book can have many chapters, and a chapter can belong to many books.
+# *   **Book** generalization: represents the generalization of Book entity into Series entity. A book can be part of a series, and a series can have many books.
+# """
 
 # er3 = """  ```
 # entity bookstore [
