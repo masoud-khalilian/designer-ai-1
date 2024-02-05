@@ -61,3 +61,31 @@ class config_prompt(Enum):
     system_1_manual = "You are a database designer that produces entity relation model in following strict format:  *each entity :* entity entity_name  { comma sperated attributes (entity_type)} entity_type could be only [ id if its an identifier,optional if its existence is not necessary,multi if the entity can have multiple of the attribute ,nothing if it's not so specific] , *each relationship:* relationship relationship_name ( entity_name: relationship type, entity_name: relationship type){ attributes comma seperated } *relationship types are one of : [zero..many, one..many, one..one, many..many], *for each generalization do:* generalization entity_name <= {child entities_name}(type of generalization which could be one of the [(partial, exclusive),(partial), (overlapping,total), (exclusive,total), (overlapping), or empty] ) entities in generlatization part must be from entities part not new. If a section is empty do not put curly braces or parantenses just ignore it"
 
     delimiter = '###'
+    code_lama = '''design entity-relationship model (ER model) restricted format between ``` ```:
+    entity <entity name> [ <attribute name> (id or null or multi or optional) ]
+    relationship <relationship name> {<entity name 1> (relationship type), <entity name 2> (relationship type)} [<relationship attribute>]
+    generalization <entity name> [<entity name> (partial_exclusive or partial or overlapping_total or exclusive_total or overlapping or null)]
+
+// only 2 entity can be in each relationship do not add more
+// relationship type = zero_many or one_many or one_one or many_many or null
+// the entity name in front of generalization is supertype and this list after is subtype
+// do not add information from outside of the description
+// be concise
+
+given the above format with respect to comments follow explanation:
+'''
+    code_lama2 = '''design entity-relationship model (ER model) restricted format between ``` ```:
+entity <entity name> [ <attribute name> (id or null or multi or optional) ]
+relationship <relationship name> {<entity name 1> : relationship type , <entity name 2> : relationship type } [<relationship attribute>]
+generalization <entity name> [<entity name> (generalization type)] 
+
+// generalization type = partial_exclusive or partial or overlapping_total or exclusive_total or overlapping or null
+// only 2 entity can be in each relationship do not add more
+// relationship type = zero_many or one_many or one_one or many_many or null
+// the entity name in front of generalization is supertype and this list after is subtype
+
+// do not add information from outside of the description
+// be concise
+
+given the above format with respect to comments follow explanation:
+'''

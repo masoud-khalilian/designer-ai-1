@@ -11,8 +11,7 @@ It is requested to keep track of the inventories made at each store and the stoc
 For each store it is also requested to keep track of the managers who supervised the store at each time period (start date, end date). Each store can be supervised by more than one manager at the same time, and each manager can supervise multiple stores or the same store at the same time in different time periods.  It is also requested to store whether or not a manager has encountered critical issues during the supervision of a store.
 
 3-
-We want a to create a database for bookstore. each bookstore has addressa and unique id.each book 
-has name and isbn and could be sell by many book store.
+We want a to create a database for bookstore. each bookstore has addressa and unique id. each book has name and isbn and could be sell by many book store.
 
 4-
 This system is designed for use strictly by the employees of a hospital network.
@@ -36,3 +35,39 @@ the required book, and the state of wear of the book when withdrawn by the perso
 Consider that the same book can be consulted by at most one person on each day. Consider also that
 the same person can consult several different books in the same day and can consult the same book
 several times but on different dates.
+
+6-
+We want to create the database for the management of boat rental at a sports club. To rent a boat you  need to become a member of the sports club by signing a membership card.
+The members of the club are characterized by the number of the membership card, the name, the surname, a telephone number, and the number of the nautical license (if available). 
+
+Each boat is identified by a unique numerical code and is characterized by the name of the manufacturer and the year of construction.
+For boats that have cabins, the list of optionals mounted on board (such as GPS, fridge, shower, oven, etc.) are known.  Each manufacturer is identified by a unique code and is characterized by the name and address of the registered office.
+
+You want to keep track of the boat rentals made by members. Each rental is characterized by the rented boat, the date on which the rental was made, the partner who made the rental and the rental cost.  Consider that a boat can be rented by at most one member on each day. Also consider that the same member can rent several different boats on the same day, and can rent the same boat several times but on different dates.
+
+
+    code_lama = '''return entity relation model (ER model) follow format:
+
+entity <entity name> [ <attribute name> (id or null or multi or optional) ]
+relationship <relationship name> <entity name 1> (relationship_type), <entity name 2> (relationship_type) [relationship_attribute]
+generalization <entity name> <generalization_kind>  [<entity name>] 
+
+// relationship_type = "zero_many" or "one_many" or "one_one" or "many_many" or null
+// generalization_kind = "partial_exclusive" or "partial" or "overlapping_total" or "exclusive_total" or "overlapping" or null
+// the entity name in front of generalization is supertype and this list after is subtype
+// don not add information from outside of the description given
+// be concise
+given the above format design with respect to its comments follow explanation: '''
+
+    code_lama2 = ''' return entity relation model (ER model) follow format inside an ``` ```:
+
+    entity <entity name> [ attribute_name <attribute type> ] // the only attribute type = "id" or "null" or "multi" or "optional"
+
+    relation <relation name> (entity name relation type , entity name relation type) [relation_attribute]    // relation type = "zero_many" or "one_many" or "one_one" or "many_many" or null
+
+    generalization <entity name as super entity> <generalization_type>  [list of entity names as sub entity]    // generalization_type = "partial_exclusive" or "partial" or "overlapping_total" or "exclusive_total" or "overlapping" or null
+    
+    // do not add information from outside of the description
+    // be concise do not add from your knowledge
+
+   the database description: '''
