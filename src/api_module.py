@@ -14,11 +14,12 @@ class Call_Api(Process):
         self.open_api_key = os.getenv("API_KEY")
         self.open_router_api_key = os.getenv("OPEN_ROUTER_KEY_DESGINER")
 
-    def call_gpt3(self, prompt, system_prompt, custom_model="gpt-3.5-turbo-1106") -> str:
+    def call_gpt3(self, prompt, system_prompt, custom_model="gpt-3.5-turbo-1106", temperature=0.1) -> str:
         client = OpenAI(api_key=self.open_api_key)
 
         completion = client.chat.completions.create(
             model=custom_model,
+            temperature=temperature,
             messages=[
                 {"role": "system", "content": f'{system_prompt}'},
                 {"role": "user", "content": f'{prompt}'}
@@ -28,7 +29,7 @@ class Call_Api(Process):
         self.answer = completion.choices[0].message.content
         return completion.choices[0].message.content
 
-    def call_open_router(self, model_name="", prompt="") -> str:
+    def call_open_router(self, model_name="", prompt="", temperature=0) -> str:
         headers = {
             'Authorization': f'Bearer {self.open_router_api_key}',
         }
@@ -41,7 +42,7 @@ class Call_Api(Process):
                 "messages": [
                     {"role": "user", "content": prompt},
                 ],
-                "temperature": 0
+                "temperature": temperature
             })
         )
         if response.status_code == 200:

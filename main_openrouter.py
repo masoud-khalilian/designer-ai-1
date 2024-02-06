@@ -1,5 +1,5 @@
 import json
-from codelama_array_generator import CustomArrayGenerator
+from custom_array_generator import CustomArrayGenerator
 from src.api_module import Call_Api
 from src.prompt import Prompt
 from src.pre_processing_module import RemoveSpace, PromptGeneration  # ,Summarize
@@ -14,9 +14,9 @@ from src.er_model import ErModel
 def main():
 
     model_name = cfg_model.code_llama_70b.value
-    # short_prompt_overhead, short_expressive_prompt_overhead short_example_prompt_overhead
     prompt_overhead = cfg.short_prompt_overhead.value
-    er_file_name = "er_model"  # the output will have .er at the end
+    output_file_name = "er_model"
+    temperature = 0
 
     print("Welcome to Designer AI 1")
     init_prompt = Prompt()
@@ -29,7 +29,8 @@ def main():
     # define a key in .env file
     call_api = Call_Api()
     preliminary_er = call_api.call_open_router(model_name=model_name,
-                                               prompt=init_prompt.get_prompt())
+                                               prompt=init_prompt.get_prompt(),
+                                               temperature=temperature)
 
     # log the response in prelimniary_er_log.txt
     log_preliminary_er(preliminary_er, model_name)
@@ -44,7 +45,7 @@ def main():
     json_string = json.dumps(python_list)
     res = json.loads(json_string)
     res = list(filter(lambda x: x is not None, res))
-    er_model.save_model(res, file_name=er_file_name)
+    er_model.save_model(res, file_name=output_file_name)
 
     print(f"JOB SUCCESSFULLY DONE !!!\n")
 
