@@ -1,9 +1,7 @@
-import json
 import re
 import random
 import numpy as np
 
-# from er_model import ErModel
 
 def find_entity_id(name, data):
     for item in data:
@@ -112,7 +110,7 @@ def get_attribute_cardinality(input_string):
         return keyword, '1_1'
 
 
-def process_tuple_entities(input_tuple,current_position):
+def process_tuple_entities(input_tuple, current_position):
     global last_element_id_global
     result_list = np.array([])
     key, attributes = input_tuple
@@ -165,10 +163,9 @@ def process_tuple_relations(input_tuple, enity_data):
         parent_id = find_entity_id(name, data=enity_data)
         for i in enity_data:
             if i["_id"] == parent_id:
-                print(i)
                 x[entity_id] += i["_x"]
                 y[entity_id] += i["_y"]
-            
+
         att_dic = {
             "__type": "Participation",
             "_id": last_element_id_global,
@@ -180,11 +177,11 @@ def process_tuple_relations(input_tuple, enity_data):
             "_role": ""
         },
         entity_dict = {
-        "__type": "Relationship",
-        "_id": entity_id,
-        "_name": key,
-        "_x": x[entity_id]/2,
-        "_y": y[entity_id]/2
+            "__type": "Relationship",
+            "_id": entity_id,
+            "_name": key,
+            "_x": x[entity_id]/2,
+            "_y": y[entity_id]/2
         },
         result_list = np.append(result_list, entity_dict)
         attribute_dicts = np.append(attribute_dicts, att_dic)
@@ -203,19 +200,19 @@ def extract_entities(input_string):
         entity_name = match[0].strip()
         brace_content = match[2].strip() if match[2] else None
         entity_data.append((entity_name, brace_content))
-    current_position = [0,0]
+    current_position = [0, 0]
     obj_entity_list = np.array([])
     number = 2
     for enity in enumerate(entity_data):
         direction = number % 2
-        current_position = [current_position[0] + (500 * (1-direction)),current_position[1] + (500 * direction)]
+        current_position = [
+            current_position[0] + (500 * (1-direction)), current_position[1] + (500 * direction)]
         number += 1
         if enity[1][1] is not None:
-            j = process_tuple_entities(enity[1],current_position)
+            j = process_tuple_entities(enity[1], current_position)
             last_element_id_global = last_element_id_global+1
             obj_entity_list = np.append(obj_entity_list, j)
         else:
-            print(current_position[0],current_position[1])
             last_element_id_global = last_element_id_global+1
             obj_entity_list = np.append(obj_entity_list, [{
                 "__type": "Entity",
@@ -347,9 +344,7 @@ class ArrayGenerator():
         er_code = er_code.replace("\n", " ")
         er_code = re.sub(r'\s+', ' ', er_code)
         er_code = re.sub(r'/\*.*?\*/', '', er_code, flags=re.DOTALL)
-        print("\n")
-        print(er_code)
-        print("\n")
+
         entities_attributes = extract_entities(er_code)
         array_json = np.append(array_json, entities_attributes)
 
@@ -375,16 +370,3 @@ class ArrayGenerator():
         last_element_id_global = 1
         array_json, cleanjson = self.transform_er_code()
         return array_json
-
-
-# er3 = " entity PERSON { id (id), name (optional), surname (optional), phone (optional), email (optional), facebook (optional) } entity CONSULTATION { date (id), wear } entity BOOK { ISBN (id), title, chapters (multi) } entity SERIES_BOOK { SeriesName, BookNumber } entity AUTHOR { CodA (id), name, surname }  relationship MAKES ( PERSON: zero..many, CONSULTATION: one..one ) relationship OF ( BOOK: zero..many, CONSULTATION: one..one ) relationship AUTHORED_BY ( AUTHOR: one..many, BOOK: one..many )   BOOK <= { SERIES_BOOK } (optional, exclusive)"
-
-# er_model = ErModel(er3)
-# generator = ArrayGenerator(er3)
-# json_array = generator.get_transformed_array()
-
-# python_list = json_array.tolist()
-# json_string = json.dumps(python_list)
-# res = json.loads(json_string)
-# res = list(filter(lambda x: x is not None, res))
-# er_model.save_model(res, file_name=f"er_model_manual")
