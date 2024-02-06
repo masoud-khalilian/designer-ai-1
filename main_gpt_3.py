@@ -13,7 +13,7 @@ def main():
     output_file_name = "er_model"
     prompt_overhead = "As er model designer design this explaination: "
     system_propmt = cfg.system_1_manual.value
-    temperature = 0.01
+    temperature = 0.1
 
     print("Welcome to Designer AI 1")
     init_prompt = Prompt()
