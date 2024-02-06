@@ -1,7 +1,7 @@
 1-
 We want a to create a database for bookstore. each bookstore has addressa and unique id. each book has name and isbn and could be sell by many book store.
 
-5-
+2-
 We want to create the database for the consultation of historical books in a museum by some scholars.
 To consult the books each person must register at the museum and acquire a card. Persons are identified by the 
 identification code of the card; you also know the name, surname, a telephone number, an e-mail address, and the
@@ -16,3 +16,6 @@ the required book, and the state of wear of the book when withdrawn by the perso
 Consider that the same book can be consulted by at most one person on each day. Consider also that
 the same person can consult several different books in the same day and can consult the same book
 several times but on different dates.
+
+3-
+You are required to create a database for an online platform managing virtual calls. Design the Entity-Relationship diagram according to the following specifications:Each user is identified by the email and characterized by the name and surname.The user can be categorized as guest or registered. For registered users the birth date and the join date to the platform is recorded. The platform provides several membership plans. Each plan is characterized by the name, cost, and duration (e.g, montly, annual). For each registered user the current membership plan and the date of purchase are recorded.Calls are identified by an alphanumeric code and characterized by a title.You want to store call partecipations in the database. The partecipations are characterized by the call, the user, the date and start time when the user joined the call, the device used for the connection (e.g., mobile, desktop) and the end time, when the user leaves the call (if available). Consider that (1) each user can be participate only to one call in the same time period and (2) different users can participate to the same call."

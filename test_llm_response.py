@@ -1,6 +1,7 @@
 import json
 from src.er_model import ErModel
-from custom_array_generator import CustomArrayGenerator
+from src.array_generator import ArrayGenerator
+# from custom_array_generator import CustomArrayGenerator
 
 # this function will run the program with pre maide response from the server
 # it basically starts from second part of the programm
@@ -18,7 +19,7 @@ def main():
     pre_er_model = ErModel(saved_respose)
     er3 = pre_er_model.get_model()
     er_model = ErModel(er3)
-    generator = CustomArrayGenerator(er3)
+    generator = ArrayGenerator(er3)
     json_array = generator.get_transformed_array()
 
     python_list = json_array.tolist()
