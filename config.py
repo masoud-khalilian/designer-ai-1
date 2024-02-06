@@ -62,7 +62,7 @@ class config_prompt(Enum):
 
     delimiter = '###'
 
-    code_lama_prompt_overhead = '''design entity-relationship model (ER model) restricted format between ``` ```:
+    short_prompt_overhead = '''design entity-relationship model (ER model) restricted format between ``` ```:
 entity <entity name> [ <attribute name> (id or null or multi or optional) ]
 relationship <relationship name> {<entity name 1> : relationship type , <entity name 2> : relationship type } [<relationship attribute>]
 generalization <entity name> [<entity name> (generalization type)] 
@@ -77,7 +77,7 @@ generalization <entity name> [<entity name> (generalization type)]
 
 given the above format with respect to comments follow explanation:
 '''
-    code_lama_34b_prompt_overhead = '''design entity-relationship model (ER model) restricted format between ``` ```:
+    short_expressive_prompt_overhead = '''design entity-relationship model (ER model) restricted format between ``` ```:
 entity <entity name> [ <attribute name> (id or null or multi or optional) , ]
 relationship <relationship name> {<entity name 1> : relationship type , <entity name 2> : relationship type } [<relationship attribute> , ]
 generalization <entity name> [<entity name> (generalization type) , ] 
@@ -93,7 +93,7 @@ generalization <entity name> [<entity name> (generalization type) , ]
 
 given the above format with respect to comments follow explanation:
 '''
-    mixtral_prompt_overhead = '''design entity-relationship model restricted format:
+    short_example_prompt_overhead = '''design entity-relationship model restricted format:
 entity <entity name> [ <attribute name> (id or null or multi or optional) , ]
 relationship <relationship name> {<entity name 1> : relationship type , <entity name 2> : relationship type } [<relationship attribute> , ]
 generalization <entity name> [<entity name> (generalization type) , ] 
@@ -109,7 +109,6 @@ relationship has {hospital : zero_many , doctor : one_many } [ ]
 // the entity name in front of generalization is supertype and this list after is subtype
 // put , after each item in list 
 // carefull paranthesis and other symbols where to place them 
-
 
 // do not add information from outside of the description
 // be concise
