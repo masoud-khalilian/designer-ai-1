@@ -1,0 +1,1202 @@
+{
+  "_main": {
+    "step": "erDesign",
+    "restructuringHappened": false,
+    "draftSaved": true,
+    "showMenu": false,
+    "showModal": false,
+    "uid": 1
+  },
+  "erDesign": {
+    "model": {
+      "uid": 7,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [
+        {
+          "__type": "Entity",
+          "_id": 1,
+          "_name": "customer",
+          "_x": 500,
+          "_y": 0,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 2,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -167,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 3,
+          "_name": "tax_code",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": 116,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 4,
+          "_name": "name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -114,
+          "_y": 180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 5,
+          "_name": "address",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -108,
+          "_y": 180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 6,
+          "_name": "email",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": 34,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 7,
+          "_name": "type",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_N",
+          "_x": 117,
+          "_y": 0
+        },
+        {
+          "__type": "Entity",
+          "_id": 8,
+          "_name": "private_customer",
+          "_x": 500,
+          "_y": 500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 9,
+          "_name": "tax_code",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 8,
+          "_cardinality": "1_1",
+          "_x": 61,
+          "_y": -120
+        },
+        {
+          "__type": "Entity",
+          "_id": 10,
+          "_name": "company_customer",
+          "_x": 1000,
+          "_y": 500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 11,
+          "_name": "tax_code",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 10,
+          "_cardinality": "1_1",
+          "_x": 178,
+          "_y": 180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 12,
+          "_name": "phone_number",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 10,
+          "_cardinality": "1_N",
+          "_x": -191,
+          "_y": 0
+        },
+        {
+          "__type": "Entity",
+          "_id": 13,
+          "_name": "furniture",
+          "_x": 1000,
+          "_y": 1000,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 14,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": -123,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 15,
+          "_name": "price",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": -179,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 16,
+          "_name": "size_height",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 32,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 17,
+          "_name": "size_width",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 73,
+          "_y": 180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 18,
+          "_name": "size_depth",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": -122,
+          "_y": 0
+        },
+        {
+          "__type": "Entity",
+          "_id": 19,
+          "_name": "supplier",
+          "_x": 1500,
+          "_y": 1000,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 20,
+          "_name": "vat_number",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 19,
+          "_cardinality": "1_1",
+          "_x": -10,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 21,
+          "_name": "name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 19,
+          "_cardinality": "1_1",
+          "_x": -205,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 22,
+          "_name": "phone_number",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 19,
+          "_cardinality": "1_1",
+          "_x": 76,
+          "_y": 120
+        },
+        {
+          "__type": "Entity",
+          "_id": 23,
+          "_name": "sale_contract",
+          "_x": 1500,
+          "_y": 1500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 24,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 23,
+          "_cardinality": "1_1",
+          "_x": -153,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 25,
+          "_name": "total_price",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 23,
+          "_cardinality": "1_1",
+          "_x": 4,
+          "_y": 120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 26,
+          "_name": "date",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 23,
+          "_cardinality": "1_1",
+          "_x": 13,
+          "_y": -180
+        },
+        {
+          "__type": "Entity",
+          "_id": 27,
+          "_name": "furniture_model",
+          "_x": 2000,
+          "_y": 1500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 28,
+          "_name": "code",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 27,
+          "_cardinality": "1_1",
+          "_x": -210,
+          "_y": 120
+        },
+        {
+          "__type": "Entity",
+          "_id": 29,
+          "_name": "van",
+          "_x": 2000,
+          "_y": 2000,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 30,
+          "_name": "plate_number",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 29,
+          "_cardinality": "1_1",
+          "_x": 199,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 31,
+          "_name": "model",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 29,
+          "_cardinality": "1_1",
+          "_x": -122,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 32,
+          "_name": "registration_year",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 29,
+          "_cardinality": "1_1",
+          "_x": -139,
+          "_y": 180
+        },
+        {
+          "__type": "Entity",
+          "_id": 33,
+          "_name": "delivery",
+          "_x": 2500,
+          "_y": 2000,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 34,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 33,
+          "_cardinality": "1_1",
+          "_x": -156,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 35,
+          "_name": "date_time",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 33,
+          "_cardinality": "1_1",
+          "_x": -106,
+          "_y": -120
+        },
+        {
+          "__type": "Relationship",
+          "_id": 36,
+          "_name": "has",
+          "_x": 250.0,
+          "_y": 0.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 36,
+          "_name": "has",
+          "_x": 500.0,
+          "_y": 250.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 37,
+          "_entityId": 1,
+          "_relationshipId": 36,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 38,
+          "_entityId": 8,
+          "_relationshipId": 36,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 39,
+          "_name": "has",
+          "_x": 250.0,
+          "_y": 0.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 39,
+          "_name": "has",
+          "_x": 750.0,
+          "_y": 250.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 40,
+          "_entityId": 1,
+          "_relationshipId": 39,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 41,
+          "_entityId": 10,
+          "_relationshipId": 39,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 42,
+          "_name": "buys",
+          "_x": 250.0,
+          "_y": 0.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 42,
+          "_name": "buys",
+          "_x": 1000.0,
+          "_y": 750.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 43,
+          "_entityId": 1,
+          "_relationshipId": 42,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 44,
+          "_entityId": 23,
+          "_relationshipId": 42,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 45,
+          "_name": "supplies",
+          "_x": 750.0,
+          "_y": 500.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 45,
+          "_name": "supplies",
+          "_x": 1250.0,
+          "_y": 1000.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 46,
+          "_entityId": 19,
+          "_relationshipId": 45,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 47,
+          "_entityId": 13,
+          "_relationshipId": 45,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 48,
+          "_name": "contains",
+          "_x": 750.0,
+          "_y": 750.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 48,
+          "_name": "contains",
+          "_x": 1750.0,
+          "_y": 1500.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 49,
+          "_entityId": 23,
+          "_relationshipId": 48,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 50,
+          "_entityId": 27,
+          "_relationshipId": 48,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 51,
+          "_name": "uses",
+          "_x": 1250.0,
+          "_y": 1000.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 51,
+          "_name": "uses",
+          "_x": 2250.0,
+          "_y": 2000.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 52,
+          "_entityId": 33,
+          "_relationshipId": 51,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 53,
+          "_entityId": 29,
+          "_relationshipId": 51,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Generalization",
+          "_id": 55,
+          "_type": "p_e",
+          "_entityId": 1
+        },
+        {
+          "__type": "GeneralizationChild",
+          "_id": 56,
+          "_entityId": 8,
+          "_generalizationId": 55
+        },
+        {
+          "__type": "GeneralizationChild",
+          "_id": 57,
+          "_entityId": 10,
+          "_generalizationId": 55
+        }
+      ],
+      "itemsMap": {
+        "1": {
+          "__type": "Entity",
+          "_id": 1,
+          "_name": "customer",
+          "_x": 500,
+          "_y": 0,
+          "_mag": false
+        },
+        "2": {
+          "__type": "Attribute",
+          "_id": 2,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -167,
+          "_y": -120
+        },
+        "3": {
+          "__type": "Attribute",
+          "_id": 3,
+          "_name": "tax_code",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": 116,
+          "_y": -180
+        },
+        "4": {
+          "__type": "Attribute",
+          "_id": 4,
+          "_name": "name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -114,
+          "_y": 180
+        },
+        "5": {
+          "__type": "Attribute",
+          "_id": 5,
+          "_name": "address",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -108,
+          "_y": 180
+        },
+        "6": {
+          "__type": "Attribute",
+          "_id": 6,
+          "_name": "email",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": 34,
+          "_y": -120
+        },
+        "7": {
+          "__type": "Attribute",
+          "_id": 7,
+          "_name": "type",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_N",
+          "_x": 117,
+          "_y": 0
+        },
+        "8": {
+          "__type": "Entity",
+          "_id": 8,
+          "_name": "private_customer",
+          "_x": 500,
+          "_y": 500,
+          "_mag": false
+        },
+        "9": {
+          "__type": "Attribute",
+          "_id": 9,
+          "_name": "tax_code",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 8,
+          "_cardinality": "1_1",
+          "_x": 61,
+          "_y": -120
+        },
+        "10": {
+          "__type": "Entity",
+          "_id": 10,
+          "_name": "company_customer",
+          "_x": 1000,
+          "_y": 500,
+          "_mag": false
+        },
+        "11": {
+          "__type": "Attribute",
+          "_id": 11,
+          "_name": "tax_code",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 10,
+          "_cardinality": "1_1",
+          "_x": 178,
+          "_y": 180
+        },
+        "12": {
+          "__type": "Attribute",
+          "_id": 12,
+          "_name": "phone_number",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 10,
+          "_cardinality": "1_N",
+          "_x": -191,
+          "_y": 0
+        },
+        "13": {
+          "__type": "Entity",
+          "_id": 13,
+          "_name": "furniture",
+          "_x": 1000,
+          "_y": 1000,
+          "_mag": false
+        },
+        "14": {
+          "__type": "Attribute",
+          "_id": 14,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": -123,
+          "_y": 0
+        },
+        "15": {
+          "__type": "Attribute",
+          "_id": 15,
+          "_name": "price",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": -179,
+          "_y": -180
+        },
+        "16": {
+          "__type": "Attribute",
+          "_id": 16,
+          "_name": "size_height",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 32,
+          "_y": 0
+        },
+        "17": {
+          "__type": "Attribute",
+          "_id": 17,
+          "_name": "size_width",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 73,
+          "_y": 180
+        },
+        "18": {
+          "__type": "Attribute",
+          "_id": 18,
+          "_name": "size_depth",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": -122,
+          "_y": 0
+        },
+        "19": {
+          "__type": "Entity",
+          "_id": 19,
+          "_name": "supplier",
+          "_x": 1500,
+          "_y": 1000,
+          "_mag": false
+        },
+        "20": {
+          "__type": "Attribute",
+          "_id": 20,
+          "_name": "vat_number",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 19,
+          "_cardinality": "1_1",
+          "_x": -10,
+          "_y": -180
+        },
+        "21": {
+          "__type": "Attribute",
+          "_id": 21,
+          "_name": "name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 19,
+          "_cardinality": "1_1",
+          "_x": -205,
+          "_y": -120
+        },
+        "22": {
+          "__type": "Attribute",
+          "_id": 22,
+          "_name": "phone_number",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 19,
+          "_cardinality": "1_1",
+          "_x": 76,
+          "_y": 120
+        },
+        "23": {
+          "__type": "Entity",
+          "_id": 23,
+          "_name": "sale_contract",
+          "_x": 1500,
+          "_y": 1500,
+          "_mag": false
+        },
+        "24": {
+          "__type": "Attribute",
+          "_id": 24,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 23,
+          "_cardinality": "1_1",
+          "_x": -153,
+          "_y": -120
+        },
+        "25": {
+          "__type": "Attribute",
+          "_id": 25,
+          "_name": "total_price",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 23,
+          "_cardinality": "1_1",
+          "_x": 4,
+          "_y": 120
+        },
+        "26": {
+          "__type": "Attribute",
+          "_id": 26,
+          "_name": "date",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 23,
+          "_cardinality": "1_1",
+          "_x": 13,
+          "_y": -180
+        },
+        "27": {
+          "__type": "Entity",
+          "_id": 27,
+          "_name": "furniture_model",
+          "_x": 2000,
+          "_y": 1500,
+          "_mag": false
+        },
+        "28": {
+          "__type": "Attribute",
+          "_id": 28,
+          "_name": "code",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 27,
+          "_cardinality": "1_1",
+          "_x": -210,
+          "_y": 120
+        },
+        "29": {
+          "__type": "Entity",
+          "_id": 29,
+          "_name": "van",
+          "_x": 2000,
+          "_y": 2000,
+          "_mag": false
+        },
+        "30": {
+          "__type": "Attribute",
+          "_id": 30,
+          "_name": "plate_number",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 29,
+          "_cardinality": "1_1",
+          "_x": 199,
+          "_y": 0
+        },
+        "31": {
+          "__type": "Attribute",
+          "_id": 31,
+          "_name": "model",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 29,
+          "_cardinality": "1_1",
+          "_x": -122,
+          "_y": -180
+        },
+        "32": {
+          "__type": "Attribute",
+          "_id": 32,
+          "_name": "registration_year",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 29,
+          "_cardinality": "1_1",
+          "_x": -139,
+          "_y": 180
+        },
+        "33": {
+          "__type": "Entity",
+          "_id": 33,
+          "_name": "delivery",
+          "_x": 2500,
+          "_y": 2000,
+          "_mag": false
+        },
+        "34": {
+          "__type": "Attribute",
+          "_id": 34,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 33,
+          "_cardinality": "1_1",
+          "_x": -156,
+          "_y": -120
+        },
+        "35": {
+          "__type": "Attribute",
+          "_id": 35,
+          "_name": "date_time",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 33,
+          "_cardinality": "1_1",
+          "_x": -106,
+          "_y": -120
+        },
+        "36": {
+          "__type": "Relationship",
+          "_id": 36,
+          "_name": "has",
+          "_x": 500.0,
+          "_y": 250.0
+        },
+        "37": {
+          "__type": "Participation",
+          "_id": 37,
+          "_entityId": 1,
+          "_relationshipId": 36,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "38": {
+          "__type": "Participation",
+          "_id": 38,
+          "_entityId": 8,
+          "_relationshipId": 36,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "39": {
+          "__type": "Relationship",
+          "_id": 39,
+          "_name": "has",
+          "_x": 750.0,
+          "_y": 250.0
+        },
+        "40": {
+          "__type": "Participation",
+          "_id": 40,
+          "_entityId": 1,
+          "_relationshipId": 39,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "41": {
+          "__type": "Participation",
+          "_id": 41,
+          "_entityId": 10,
+          "_relationshipId": 39,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "42": {
+          "__type": "Relationship",
+          "_id": 42,
+          "_name": "buys",
+          "_x": 1000.0,
+          "_y": 750.0
+        },
+        "43": {
+          "__type": "Participation",
+          "_id": 43,
+          "_entityId": 1,
+          "_relationshipId": 42,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "44": {
+          "__type": "Participation",
+          "_id": 44,
+          "_entityId": 23,
+          "_relationshipId": 42,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "45": {
+          "__type": "Relationship",
+          "_id": 45,
+          "_name": "supplies",
+          "_x": 1250.0,
+          "_y": 1000.0
+        },
+        "46": {
+          "__type": "Participation",
+          "_id": 46,
+          "_entityId": 19,
+          "_relationshipId": 45,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "47": {
+          "__type": "Participation",
+          "_id": 47,
+          "_entityId": 13,
+          "_relationshipId": 45,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "48": {
+          "__type": "Relationship",
+          "_id": 48,
+          "_name": "contains",
+          "_x": 1750.0,
+          "_y": 1500.0
+        },
+        "49": {
+          "__type": "Participation",
+          "_id": 49,
+          "_entityId": 23,
+          "_relationshipId": 48,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "50": {
+          "__type": "Participation",
+          "_id": 50,
+          "_entityId": 27,
+          "_relationshipId": 48,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "51": {
+          "__type": "Relationship",
+          "_id": 51,
+          "_name": "uses",
+          "_x": 2250.0,
+          "_y": 2000.0
+        },
+        "52": {
+          "__type": "Participation",
+          "_id": 52,
+          "_entityId": 33,
+          "_relationshipId": 51,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "53": {
+          "__type": "Participation",
+          "_id": 53,
+          "_entityId": 29,
+          "_relationshipId": 51,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "55": {
+          "__type": "Generalization",
+          "_id": 55,
+          "_type": "p_e",
+          "_entityId": 1
+        },
+        "56": {
+          "__type": "GeneralizationChild",
+          "_id": 56,
+          "_entityId": 8,
+          "_generalizationId": 55
+        },
+        "57": {
+          "__type": "GeneralizationChild",
+          "_id": 57,
+          "_entityId": 10,
+          "_generalizationId": 55
+        }
+      }
+    },
+    "edited": true,
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "selectedTool": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showRenamingRoleInput": false,
+    "showCardinalityMenu": false,
+    "showGeneralizationTypeMenu": false,
+    "showExportMenu": false
+  },
+  "erRestructuring": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showRenamingRoleInput": false,
+    "showMultivalueAttributeMenu": false,
+    "showCompositeAttributeMenu": false,
+    "showGeneralizationMenu": false
+  },
+  "erTranslation": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showOneToManyTypeBRelationshipMenu": false,
+    "showOneToOneTypeBRelationshipMenu": false,
+    "showOneToOneTypeCRelationshipMenu": false
+  },
+  "schemaDesign": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showDataTypeOptions": false,
+    "showReorderingMenu": false,
+    "showExportMenu": false
+  }
+}

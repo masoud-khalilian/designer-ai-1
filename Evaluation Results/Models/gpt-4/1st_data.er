@@ -1,0 +1,1164 @@
+{
+  "_main": {
+    "step": "erDesign",
+    "restructuringHappened": false,
+    "draftSaved": true,
+    "showMenu": false,
+    "showModal": false,
+    "uid": 1
+  },
+  "erDesign": {
+    "model": {
+      "uid": 7,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [
+        {
+          "__type": "Entity",
+          "_id": 1,
+          "_name": "Customer",
+          "_x": 500,
+          "_y": 0,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 2,
+          "_name": "TaxCode",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -71,
+          "_y": 180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 3,
+          "_name": "Name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -143,
+          "_y": 120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 4,
+          "_name": "Address",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": 176,
+          "_y": 180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 5,
+          "_name": "Email",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -94,
+          "_y": 0
+        },
+        {
+          "__type": "Entity",
+          "_id": 6,
+          "_name": "PrivateCustomer",
+          "_x": 500,
+          "_y": 500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 7,
+          "_name": "TaxCode",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 6,
+          "_cardinality": "1_1",
+          "_x": 3,
+          "_y": 180
+        },
+        {
+          "__type": "Entity",
+          "_id": 8,
+          "_name": "CompanyCustomer",
+          "_x": 1000,
+          "_y": 500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 9,
+          "_name": "TaxCode",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 8,
+          "_cardinality": "1_1",
+          "_x": 11,
+          "_y": 120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 10,
+          "_name": "TelephoneNumbers",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 8,
+          "_cardinality": "1_N",
+          "_x": -44,
+          "_y": -120
+        },
+        {
+          "__type": "Entity",
+          "_id": 11,
+          "_name": "Furniture",
+          "_x": 1000,
+          "_y": 1000,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 12,
+          "_name": "AlphanumericCode",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 11,
+          "_cardinality": "1_1",
+          "_x": 62,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 13,
+          "_name": "Price",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 11,
+          "_cardinality": "1_1",
+          "_x": -203,
+          "_y": 180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 14,
+          "_name": "Size",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 11,
+          "_cardinality": "1_1",
+          "_x": -57,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 15,
+          "_name": "Supplier",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 11,
+          "_cardinality": "1_1",
+          "_x": -26,
+          "_y": 180
+        },
+        {
+          "__type": "Entity",
+          "_id": 16,
+          "_name": "Supplier",
+          "_x": 1500,
+          "_y": 1000,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 17,
+          "_name": "VATNumber",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 16,
+          "_cardinality": "1_1",
+          "_x": 166,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 18,
+          "_name": "Name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 16,
+          "_cardinality": "1_1",
+          "_x": -85,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 19,
+          "_name": "TelephoneNumber",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 16,
+          "_cardinality": "1_1",
+          "_x": -105,
+          "_y": -120
+        },
+        {
+          "__type": "Entity",
+          "_id": 20,
+          "_name": "SaleContract",
+          "_x": 1500,
+          "_y": 1500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 21,
+          "_name": "AlphanumericCode",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_1",
+          "_x": -94,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 22,
+          "_name": "Customer",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_1",
+          "_x": 151,
+          "_y": 180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 23,
+          "_name": "DateSigned",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_1",
+          "_x": -108,
+          "_y": 120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 24,
+          "_name": "TotalSalePrice",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_1",
+          "_x": -47,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 25,
+          "_name": "FurnitureModels",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_N",
+          "_x": -14,
+          "_y": -180
+        },
+        {
+          "__type": "Entity",
+          "_id": 26,
+          "_name": "Van",
+          "_x": 2000,
+          "_y": 1500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 27,
+          "_name": "PlateNumber",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 26,
+          "_cardinality": "1_1",
+          "_x": -133,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 28,
+          "_name": "Model",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 26,
+          "_cardinality": "1_1",
+          "_x": 127,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 29,
+          "_name": "RegistrationYear",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 26,
+          "_cardinality": "1_1",
+          "_x": 34,
+          "_y": -120
+        },
+        {
+          "__type": "Entity",
+          "_id": 30,
+          "_name": "Delivery",
+          "_x": 2000,
+          "_y": 2000,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 31,
+          "_name": "Contract",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 30,
+          "_cardinality": "1_1",
+          "_x": -1,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 32,
+          "_name": "DateTime",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 30,
+          "_cardinality": "1_1",
+          "_x": 125,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 33,
+          "_name": "Van",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 30,
+          "_cardinality": "1_1",
+          "_x": 130,
+          "_y": 180
+        },
+        {
+          "__type": "Relationship",
+          "_id": 34,
+          "_name": "CustomerClassification",
+          "_x": 250.0,
+          "_y": 0.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 34,
+          "_name": "CustomerClassification",
+          "_x": 500.0,
+          "_y": 250.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 35,
+          "_entityId": 1,
+          "_relationshipId": 34,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 36,
+          "_entityId": 6,
+          "_relationshipId": 34,
+          "_tableId": null,
+          "_cardinality": "0_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 37,
+          "_name": "CustomerClassification",
+          "_x": 250.0,
+          "_y": 0.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 37,
+          "_name": "CustomerClassification",
+          "_x": 750.0,
+          "_y": 250.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 38,
+          "_entityId": 1,
+          "_relationshipId": 37,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 39,
+          "_entityId": 8,
+          "_relationshipId": 37,
+          "_tableId": null,
+          "_cardinality": "0_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 40,
+          "_name": "FurnitureSale",
+          "_x": 500.0,
+          "_y": 500.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 40,
+          "_name": "FurnitureSale",
+          "_x": 1250.0,
+          "_y": 1250.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 41,
+          "_entityId": 11,
+          "_relationshipId": 40,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 42,
+          "_entityId": 20,
+          "_relationshipId": 40,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 43,
+          "_name": "SupplierFurniture",
+          "_x": 750.0,
+          "_y": 500.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 43,
+          "_name": "SupplierFurniture",
+          "_x": 1250.0,
+          "_y": 1000.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 44,
+          "_entityId": 16,
+          "_relationshipId": 43,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 45,
+          "_entityId": 11,
+          "_relationshipId": 43,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 46,
+          "_name": "DeliveryScheduling",
+          "_x": 1000.0,
+          "_y": 1000.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 46,
+          "_name": "DeliveryScheduling",
+          "_x": 1750.0,
+          "_y": 1750.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 47,
+          "_entityId": 30,
+          "_relationshipId": 46,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 48,
+          "_entityId": 20,
+          "_relationshipId": 46,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 49,
+          "_name": "DeliveryScheduling",
+          "_x": 1000.0,
+          "_y": 1000.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 49,
+          "_name": "DeliveryScheduling",
+          "_x": 2000.0,
+          "_y": 1750.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 50,
+          "_entityId": 30,
+          "_relationshipId": 49,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 51,
+          "_entityId": 26,
+          "_relationshipId": 49,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Generalization",
+          "_id": 53,
+          "_type": "p_e",
+          "_entityId": 1
+        },
+        {
+          "__type": "GeneralizationChild",
+          "_id": 54,
+          "_entityId": 6,
+          "_generalizationId": 53
+        },
+        {
+          "__type": "GeneralizationChild",
+          "_id": 55,
+          "_entityId": 8,
+          "_generalizationId": 53
+        }
+      ],
+      "itemsMap": {
+        "1": {
+          "__type": "Entity",
+          "_id": 1,
+          "_name": "Customer",
+          "_x": 500,
+          "_y": 0,
+          "_mag": false
+        },
+        "2": {
+          "__type": "Attribute",
+          "_id": 2,
+          "_name": "TaxCode",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -71,
+          "_y": 180
+        },
+        "3": {
+          "__type": "Attribute",
+          "_id": 3,
+          "_name": "Name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -143,
+          "_y": 120
+        },
+        "4": {
+          "__type": "Attribute",
+          "_id": 4,
+          "_name": "Address",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": 176,
+          "_y": 180
+        },
+        "5": {
+          "__type": "Attribute",
+          "_id": 5,
+          "_name": "Email",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -94,
+          "_y": 0
+        },
+        "6": {
+          "__type": "Entity",
+          "_id": 6,
+          "_name": "PrivateCustomer",
+          "_x": 500,
+          "_y": 500,
+          "_mag": false
+        },
+        "7": {
+          "__type": "Attribute",
+          "_id": 7,
+          "_name": "TaxCode",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 6,
+          "_cardinality": "1_1",
+          "_x": 3,
+          "_y": 180
+        },
+        "8": {
+          "__type": "Entity",
+          "_id": 8,
+          "_name": "CompanyCustomer",
+          "_x": 1000,
+          "_y": 500,
+          "_mag": false
+        },
+        "9": {
+          "__type": "Attribute",
+          "_id": 9,
+          "_name": "TaxCode",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 8,
+          "_cardinality": "1_1",
+          "_x": 11,
+          "_y": 120
+        },
+        "10": {
+          "__type": "Attribute",
+          "_id": 10,
+          "_name": "TelephoneNumbers",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 8,
+          "_cardinality": "1_N",
+          "_x": -44,
+          "_y": -120
+        },
+        "11": {
+          "__type": "Entity",
+          "_id": 11,
+          "_name": "Furniture",
+          "_x": 1000,
+          "_y": 1000,
+          "_mag": false
+        },
+        "12": {
+          "__type": "Attribute",
+          "_id": 12,
+          "_name": "AlphanumericCode",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 11,
+          "_cardinality": "1_1",
+          "_x": 62,
+          "_y": -120
+        },
+        "13": {
+          "__type": "Attribute",
+          "_id": 13,
+          "_name": "Price",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 11,
+          "_cardinality": "1_1",
+          "_x": -203,
+          "_y": 180
+        },
+        "14": {
+          "__type": "Attribute",
+          "_id": 14,
+          "_name": "Size",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 11,
+          "_cardinality": "1_1",
+          "_x": -57,
+          "_y": -120
+        },
+        "15": {
+          "__type": "Attribute",
+          "_id": 15,
+          "_name": "Supplier",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 11,
+          "_cardinality": "1_1",
+          "_x": -26,
+          "_y": 180
+        },
+        "16": {
+          "__type": "Entity",
+          "_id": 16,
+          "_name": "Supplier",
+          "_x": 1500,
+          "_y": 1000,
+          "_mag": false
+        },
+        "17": {
+          "__type": "Attribute",
+          "_id": 17,
+          "_name": "VATNumber",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 16,
+          "_cardinality": "1_1",
+          "_x": 166,
+          "_y": -120
+        },
+        "18": {
+          "__type": "Attribute",
+          "_id": 18,
+          "_name": "Name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 16,
+          "_cardinality": "1_1",
+          "_x": -85,
+          "_y": -120
+        },
+        "19": {
+          "__type": "Attribute",
+          "_id": 19,
+          "_name": "TelephoneNumber",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 16,
+          "_cardinality": "1_1",
+          "_x": -105,
+          "_y": -120
+        },
+        "20": {
+          "__type": "Entity",
+          "_id": 20,
+          "_name": "SaleContract",
+          "_x": 1500,
+          "_y": 1500,
+          "_mag": false
+        },
+        "21": {
+          "__type": "Attribute",
+          "_id": 21,
+          "_name": "AlphanumericCode",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_1",
+          "_x": -94,
+          "_y": -120
+        },
+        "22": {
+          "__type": "Attribute",
+          "_id": 22,
+          "_name": "Customer",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_1",
+          "_x": 151,
+          "_y": 180
+        },
+        "23": {
+          "__type": "Attribute",
+          "_id": 23,
+          "_name": "DateSigned",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_1",
+          "_x": -108,
+          "_y": 120
+        },
+        "24": {
+          "__type": "Attribute",
+          "_id": 24,
+          "_name": "TotalSalePrice",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_1",
+          "_x": -47,
+          "_y": -180
+        },
+        "25": {
+          "__type": "Attribute",
+          "_id": 25,
+          "_name": "FurnitureModels",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_N",
+          "_x": -14,
+          "_y": -180
+        },
+        "26": {
+          "__type": "Entity",
+          "_id": 26,
+          "_name": "Van",
+          "_x": 2000,
+          "_y": 1500,
+          "_mag": false
+        },
+        "27": {
+          "__type": "Attribute",
+          "_id": 27,
+          "_name": "PlateNumber",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 26,
+          "_cardinality": "1_1",
+          "_x": -133,
+          "_y": -180
+        },
+        "28": {
+          "__type": "Attribute",
+          "_id": 28,
+          "_name": "Model",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 26,
+          "_cardinality": "1_1",
+          "_x": 127,
+          "_y": 0
+        },
+        "29": {
+          "__type": "Attribute",
+          "_id": 29,
+          "_name": "RegistrationYear",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 26,
+          "_cardinality": "1_1",
+          "_x": 34,
+          "_y": -120
+        },
+        "30": {
+          "__type": "Entity",
+          "_id": 30,
+          "_name": "Delivery",
+          "_x": 2000,
+          "_y": 2000,
+          "_mag": false
+        },
+        "31": {
+          "__type": "Attribute",
+          "_id": 31,
+          "_name": "Contract",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 30,
+          "_cardinality": "1_1",
+          "_x": -1,
+          "_y": -120
+        },
+        "32": {
+          "__type": "Attribute",
+          "_id": 32,
+          "_name": "DateTime",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 30,
+          "_cardinality": "1_1",
+          "_x": 125,
+          "_y": -120
+        },
+        "33": {
+          "__type": "Attribute",
+          "_id": 33,
+          "_name": "Van",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 30,
+          "_cardinality": "1_1",
+          "_x": 130,
+          "_y": 180
+        },
+        "34": {
+          "__type": "Relationship",
+          "_id": 34,
+          "_name": "CustomerClassification",
+          "_x": 500.0,
+          "_y": 250.0
+        },
+        "35": {
+          "__type": "Participation",
+          "_id": 35,
+          "_entityId": 1,
+          "_relationshipId": 34,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "36": {
+          "__type": "Participation",
+          "_id": 36,
+          "_entityId": 6,
+          "_relationshipId": 34,
+          "_tableId": null,
+          "_cardinality": "0_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "37": {
+          "__type": "Relationship",
+          "_id": 37,
+          "_name": "CustomerClassification",
+          "_x": 750.0,
+          "_y": 250.0
+        },
+        "38": {
+          "__type": "Participation",
+          "_id": 38,
+          "_entityId": 1,
+          "_relationshipId": 37,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "39": {
+          "__type": "Participation",
+          "_id": 39,
+          "_entityId": 8,
+          "_relationshipId": 37,
+          "_tableId": null,
+          "_cardinality": "0_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "40": {
+          "__type": "Relationship",
+          "_id": 40,
+          "_name": "FurnitureSale",
+          "_x": 1250.0,
+          "_y": 1250.0
+        },
+        "41": {
+          "__type": "Participation",
+          "_id": 41,
+          "_entityId": 11,
+          "_relationshipId": 40,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "42": {
+          "__type": "Participation",
+          "_id": 42,
+          "_entityId": 20,
+          "_relationshipId": 40,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "43": {
+          "__type": "Relationship",
+          "_id": 43,
+          "_name": "SupplierFurniture",
+          "_x": 1250.0,
+          "_y": 1000.0
+        },
+        "44": {
+          "__type": "Participation",
+          "_id": 44,
+          "_entityId": 16,
+          "_relationshipId": 43,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "45": {
+          "__type": "Participation",
+          "_id": 45,
+          "_entityId": 11,
+          "_relationshipId": 43,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "46": {
+          "__type": "Relationship",
+          "_id": 46,
+          "_name": "DeliveryScheduling",
+          "_x": 1750.0,
+          "_y": 1750.0
+        },
+        "47": {
+          "__type": "Participation",
+          "_id": 47,
+          "_entityId": 30,
+          "_relationshipId": 46,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "48": {
+          "__type": "Participation",
+          "_id": 48,
+          "_entityId": 20,
+          "_relationshipId": 46,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "49": {
+          "__type": "Relationship",
+          "_id": 49,
+          "_name": "DeliveryScheduling",
+          "_x": 2000.0,
+          "_y": 1750.0
+        },
+        "50": {
+          "__type": "Participation",
+          "_id": 50,
+          "_entityId": 30,
+          "_relationshipId": 49,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "51": {
+          "__type": "Participation",
+          "_id": 51,
+          "_entityId": 26,
+          "_relationshipId": 49,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "53": {
+          "__type": "Generalization",
+          "_id": 53,
+          "_type": "p_e",
+          "_entityId": 1
+        },
+        "54": {
+          "__type": "GeneralizationChild",
+          "_id": 54,
+          "_entityId": 6,
+          "_generalizationId": 53
+        },
+        "55": {
+          "__type": "GeneralizationChild",
+          "_id": 55,
+          "_entityId": 8,
+          "_generalizationId": 53
+        }
+      }
+    },
+    "edited": true,
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "selectedTool": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showRenamingRoleInput": false,
+    "showCardinalityMenu": false,
+    "showGeneralizationTypeMenu": false,
+    "showExportMenu": false
+  },
+  "erRestructuring": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showRenamingRoleInput": false,
+    "showMultivalueAttributeMenu": false,
+    "showCompositeAttributeMenu": false,
+    "showGeneralizationMenu": false
+  },
+  "erTranslation": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showOneToManyTypeBRelationshipMenu": false,
+    "showOneToOneTypeBRelationshipMenu": false,
+    "showOneToOneTypeCRelationshipMenu": false
+  },
+  "schemaDesign": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showDataTypeOptions": false,
+    "showReorderingMenu": false,
+    "showExportMenu": false
+  }
+}

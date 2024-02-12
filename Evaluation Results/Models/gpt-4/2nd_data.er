@@ -1,0 +1,680 @@
+{
+  "_main": {
+    "step": "erDesign",
+    "restructuringHappened": false,
+    "draftSaved": true,
+    "showMenu": false,
+    "showModal": false,
+    "uid": 1
+  },
+  "erDesign": {
+    "model": {
+      "uid": 7,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [
+        {
+          "__type": "Entity",
+          "_id": 1,
+          "_name": "User",
+          "_x": 500,
+          "_y": 0,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 2,
+          "_name": "Code",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -67,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 3,
+          "_name": "Nickname",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -25,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 4,
+          "_name": "Email",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -181,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 5,
+          "_name": "FacebookPage",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -192,
+          "_y": 120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 6,
+          "_name": "SponsorshipFee",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -150,
+          "_y": 120
+        },
+        {
+          "__type": "Entity",
+          "_id": 7,
+          "_name": "MultimediaContent",
+          "_x": 500,
+          "_y": 500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 8,
+          "_name": "NumericCode",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_1",
+          "_x": -106,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 9,
+          "_name": "Name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_1",
+          "_x": -133,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 10,
+          "_name": "Description",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_1",
+          "_x": -111,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 11,
+          "_name": "Keywords",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_N",
+          "_x": -49,
+          "_y": -120
+        },
+        {
+          "__type": "Entity",
+          "_id": 12,
+          "_name": "Audio",
+          "_x": 1000,
+          "_y": 500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 13,
+          "_name": "Duration",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 12,
+          "_cardinality": "1_1",
+          "_x": 76,
+          "_y": 120
+        },
+        {
+          "__type": "Entity",
+          "_id": 14,
+          "_name": "Photo",
+          "_x": 1000,
+          "_y": 1000,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 15,
+          "_name": "Format",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 14,
+          "_cardinality": "1_1",
+          "_x": -157,
+          "_y": 120
+        },
+        {
+          "__type": "Entity",
+          "_id": 16,
+          "_name": "Video",
+          "_x": 1500,
+          "_y": 1000,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 17,
+          "_name": "Duration",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 16,
+          "_cardinality": "1_1",
+          "_x": 104,
+          "_y": 120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 18,
+          "_name": "Resolution",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 16,
+          "_cardinality": "1_1",
+          "_x": -77,
+          "_y": 120
+        },
+        {
+          "__type": "Entity",
+          "_id": 19,
+          "_name": "Connection",
+          "_x": 1500,
+          "_y": 1500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 20,
+          "_name": "Date",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 19,
+          "_cardinality": "1_1",
+          "_x": -2,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 21,
+          "_name": "TotalMinutes",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 19,
+          "_cardinality": "1_1",
+          "_x": 207,
+          "_y": 0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 22,
+          "_name": "Provides",
+          "_x": 250.0,
+          "_y": 0.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 22,
+          "_name": "Provides",
+          "_x": 500.0,
+          "_y": 250.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 23,
+          "_entityId": 1,
+          "_relationshipId": 22,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 24,
+          "_entityId": 7,
+          "_relationshipId": 22,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 25,
+          "_name": "Connects",
+          "_x": 250.0,
+          "_y": 0.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 25,
+          "_name": "Connects",
+          "_x": 1000.0,
+          "_y": 750.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 26,
+          "_entityId": 1,
+          "_relationshipId": 25,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 27,
+          "_entityId": 19,
+          "_relationshipId": 25,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Generalization",
+          "_id": 29,
+          "_type": "p_e",
+          "_entityId": 7
+        },
+        {
+          "__type": "GeneralizationChild",
+          "_id": 30,
+          "_entityId": 12,
+          "_generalizationId": 29
+        },
+        {
+          "__type": "GeneralizationChild",
+          "_id": 31,
+          "_entityId": 14,
+          "_generalizationId": 29
+        },
+        {
+          "__type": "GeneralizationChild",
+          "_id": 32,
+          "_entityId": 16,
+          "_generalizationId": 29
+        }
+      ],
+      "itemsMap": {
+        "1": {
+          "__type": "Entity",
+          "_id": 1,
+          "_name": "User",
+          "_x": 500,
+          "_y": 0,
+          "_mag": false
+        },
+        "2": {
+          "__type": "Attribute",
+          "_id": 2,
+          "_name": "Code",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -67,
+          "_y": -120
+        },
+        "3": {
+          "__type": "Attribute",
+          "_id": 3,
+          "_name": "Nickname",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -25,
+          "_y": 0
+        },
+        "4": {
+          "__type": "Attribute",
+          "_id": 4,
+          "_name": "Email",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -181,
+          "_y": -180
+        },
+        "5": {
+          "__type": "Attribute",
+          "_id": 5,
+          "_name": "FacebookPage",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -192,
+          "_y": 120
+        },
+        "6": {
+          "__type": "Attribute",
+          "_id": 6,
+          "_name": "SponsorshipFee",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -150,
+          "_y": 120
+        },
+        "7": {
+          "__type": "Entity",
+          "_id": 7,
+          "_name": "MultimediaContent",
+          "_x": 500,
+          "_y": 500,
+          "_mag": false
+        },
+        "8": {
+          "__type": "Attribute",
+          "_id": 8,
+          "_name": "NumericCode",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_1",
+          "_x": -106,
+          "_y": -120
+        },
+        "9": {
+          "__type": "Attribute",
+          "_id": 9,
+          "_name": "Name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_1",
+          "_x": -133,
+          "_y": 0
+        },
+        "10": {
+          "__type": "Attribute",
+          "_id": 10,
+          "_name": "Description",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_1",
+          "_x": -111,
+          "_y": 0
+        },
+        "11": {
+          "__type": "Attribute",
+          "_id": 11,
+          "_name": "Keywords",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_N",
+          "_x": -49,
+          "_y": -120
+        },
+        "12": {
+          "__type": "Entity",
+          "_id": 12,
+          "_name": "Audio",
+          "_x": 1000,
+          "_y": 500,
+          "_mag": false
+        },
+        "13": {
+          "__type": "Attribute",
+          "_id": 13,
+          "_name": "Duration",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 12,
+          "_cardinality": "1_1",
+          "_x": 76,
+          "_y": 120
+        },
+        "14": {
+          "__type": "Entity",
+          "_id": 14,
+          "_name": "Photo",
+          "_x": 1000,
+          "_y": 1000,
+          "_mag": false
+        },
+        "15": {
+          "__type": "Attribute",
+          "_id": 15,
+          "_name": "Format",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 14,
+          "_cardinality": "1_1",
+          "_x": -157,
+          "_y": 120
+        },
+        "16": {
+          "__type": "Entity",
+          "_id": 16,
+          "_name": "Video",
+          "_x": 1500,
+          "_y": 1000,
+          "_mag": false
+        },
+        "17": {
+          "__type": "Attribute",
+          "_id": 17,
+          "_name": "Duration",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 16,
+          "_cardinality": "1_1",
+          "_x": 104,
+          "_y": 120
+        },
+        "18": {
+          "__type": "Attribute",
+          "_id": 18,
+          "_name": "Resolution",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 16,
+          "_cardinality": "1_1",
+          "_x": -77,
+          "_y": 120
+        },
+        "19": {
+          "__type": "Entity",
+          "_id": 19,
+          "_name": "Connection",
+          "_x": 1500,
+          "_y": 1500,
+          "_mag": false
+        },
+        "20": {
+          "__type": "Attribute",
+          "_id": 20,
+          "_name": "Date",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 19,
+          "_cardinality": "1_1",
+          "_x": -2,
+          "_y": -180
+        },
+        "21": {
+          "__type": "Attribute",
+          "_id": 21,
+          "_name": "TotalMinutes",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 19,
+          "_cardinality": "1_1",
+          "_x": 207,
+          "_y": 0
+        },
+        "22": {
+          "__type": "Relationship",
+          "_id": 22,
+          "_name": "Provides",
+          "_x": 500.0,
+          "_y": 250.0
+        },
+        "23": {
+          "__type": "Participation",
+          "_id": 23,
+          "_entityId": 1,
+          "_relationshipId": 22,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "24": {
+          "__type": "Participation",
+          "_id": 24,
+          "_entityId": 7,
+          "_relationshipId": 22,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "25": {
+          "__type": "Relationship",
+          "_id": 25,
+          "_name": "Connects",
+          "_x": 1000.0,
+          "_y": 750.0
+        },
+        "26": {
+          "__type": "Participation",
+          "_id": 26,
+          "_entityId": 1,
+          "_relationshipId": 25,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "27": {
+          "__type": "Participation",
+          "_id": 27,
+          "_entityId": 19,
+          "_relationshipId": 25,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "29": {
+          "__type": "Generalization",
+          "_id": 29,
+          "_type": "p_e",
+          "_entityId": 7
+        },
+        "30": {
+          "__type": "GeneralizationChild",
+          "_id": 30,
+          "_entityId": 12,
+          "_generalizationId": 29
+        },
+        "31": {
+          "__type": "GeneralizationChild",
+          "_id": 31,
+          "_entityId": 14,
+          "_generalizationId": 29
+        },
+        "32": {
+          "__type": "GeneralizationChild",
+          "_id": 32,
+          "_entityId": 16,
+          "_generalizationId": 29
+        }
+      }
+    },
+    "edited": true,
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "selectedTool": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showRenamingRoleInput": false,
+    "showCardinalityMenu": false,
+    "showGeneralizationTypeMenu": false,
+    "showExportMenu": false
+  },
+  "erRestructuring": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showRenamingRoleInput": false,
+    "showMultivalueAttributeMenu": false,
+    "showCompositeAttributeMenu": false,
+    "showGeneralizationMenu": false
+  },
+  "erTranslation": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showOneToManyTypeBRelationshipMenu": false,
+    "showOneToOneTypeBRelationshipMenu": false,
+    "showOneToOneTypeCRelationshipMenu": false
+  },
+  "schemaDesign": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showDataTypeOptions": false,
+    "showReorderingMenu": false,
+    "showExportMenu": false
+  }
+}
