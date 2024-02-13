@@ -20,29 +20,28 @@ def main():
     init_prompt.get_input()
 
     _remove_space = RemoveSpace()
-<<<<<<< HEAD:main_manual.py
+
     _pre_overhead = PromptGeneration(
         name='prompt generation 1', overhead="Design ER_model base on following explaination: ")
-=======
+
     _pre_overhead = PromptGeneration(name='prompt 1', overhead=prompt_overhead)
->>>>>>> 15b34452f7498f31fcbdae96ecc40ff8239041a2:main_gpt_3.py
+
     init_prompt.execute_module(_remove_space)
     init_prompt.execute_module(_pre_overhead)
 
     call_api = Call_Api()
 
-<<<<<<< HEAD:main_manual.py
     jobName = "GPT3"
     print(f"starting {jobName} \n")
     preliminary_er = call_api.call_gpt3(
         prompt=init_prompt.get_prompt(), system_prompt=cfg.system_1_manual.value, custom_model="ft:gpt-3.5-turbo-1106:personal::8fFv85AB")
-=======
+
     preliminary_er = call_api.call_gpt3(prompt=init_prompt.get_prompt(),
                                         system_prompt=system_propmt,
                                         custom_model="ft:gpt-3.5-turbo-1106:personal::8eTGxlAz",
                                         temperature=temperature)
 
->>>>>>> 15b34452f7498f31fcbdae96ecc40ff8239041a2:main_gpt_3.py
+
     log_preliminary_er(preliminary_er, "preliminary_er_GPT3")
 
     pre_er_model = ErModel(preliminary_er)
