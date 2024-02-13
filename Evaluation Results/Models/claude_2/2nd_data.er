@@ -1,0 +1,972 @@
+{
+  "_main": {
+    "step": "erDesign",
+    "restructuringHappened": false,
+    "draftSaved": true,
+    "showMenu": false,
+    "showModal": false,
+    "uid": 1
+  },
+  "erDesign": {
+    "model": {
+      "uid": 7,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [
+        {
+          "__type": "Entity",
+          "_id": 1,
+          "_name": "user",
+          "_x": 500,
+          "_y": 0,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 2,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -203,
+          "_y": 120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 3,
+          "_name": "nickname",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": 118,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 4,
+          "_name": "email",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -166,
+          "_y": 120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 5,
+          "_name": "facebook_page",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -47,
+          "_y": 180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 6,
+          "_name": "sponsorship_fee",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": 192,
+          "_y": 0
+        },
+        {
+          "__type": "Entity",
+          "_id": 7,
+          "_name": "picture",
+          "_x": 500,
+          "_y": 500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 8,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_1",
+          "_x": -103,
+          "_y": 180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 9,
+          "_name": "name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_1",
+          "_x": 206,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 10,
+          "_name": "description",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "0_1",
+          "_x": -202,
+          "_y": 180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 11,
+          "_name": "keywords",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_N",
+          "_x": 137,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 12,
+          "_name": "format",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_1",
+          "_x": 93,
+          "_y": 0
+        },
+        {
+          "__type": "Entity",
+          "_id": 13,
+          "_name": "video",
+          "_x": 1000,
+          "_y": 500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 14,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 96,
+          "_y": 180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 15,
+          "_name": "name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 121,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 16,
+          "_name": "description",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "0_1",
+          "_x": 110,
+          "_y": 120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 17,
+          "_name": "keywords",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_N",
+          "_x": 111,
+          "_y": 120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 18,
+          "_name": "duration",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 73,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 19,
+          "_name": "resolution",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 7,
+          "_y": 180
+        },
+        {
+          "__type": "Entity",
+          "_id": 20,
+          "_name": "audio",
+          "_x": 1000,
+          "_y": 1000,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 21,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_1",
+          "_x": -35,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 22,
+          "_name": "name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_1",
+          "_x": -105,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 23,
+          "_name": "description",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "0_1",
+          "_x": -42,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 24,
+          "_name": "keywords",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_N",
+          "_x": -136,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 25,
+          "_name": "duration",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_1",
+          "_x": 208,
+          "_y": 180
+        },
+        {
+          "__type": "Entity",
+          "_id": 26,
+          "_name": "connection_log",
+          "_x": 1500,
+          "_y": 1000,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 27,
+          "_name": "user_id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 26,
+          "_cardinality": "1_1",
+          "_x": 7,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 28,
+          "_name": "connection_date",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 26,
+          "_cardinality": "1_1",
+          "_x": -156,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 29,
+          "_name": "minutes_connected",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 26,
+          "_cardinality": "1_1",
+          "_x": -87,
+          "_y": -180
+        },
+        {
+          "__type": "Relationship",
+          "_id": 30,
+          "_name": "provided",
+          "_x": 250.0,
+          "_y": 0.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 30,
+          "_name": "provided",
+          "_x": 500.0,
+          "_y": 250.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 31,
+          "_entityId": 1,
+          "_relationshipId": 30,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 32,
+          "_entityId": 7,
+          "_relationshipId": 30,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 33,
+          "_name": "provided",
+          "_x": 250.0,
+          "_y": 0.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 33,
+          "_name": "provided",
+          "_x": 750.0,
+          "_y": 250.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 34,
+          "_entityId": 1,
+          "_relationshipId": 33,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 35,
+          "_entityId": 13,
+          "_relationshipId": 33,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 36,
+          "_name": "provided",
+          "_x": 250.0,
+          "_y": 0.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 36,
+          "_name": "provided",
+          "_x": 750.0,
+          "_y": 500.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 37,
+          "_entityId": 1,
+          "_relationshipId": 36,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 38,
+          "_entityId": 20,
+          "_relationshipId": 36,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 39,
+          "_name": "logged",
+          "_x": 250.0,
+          "_y": 0.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 39,
+          "_name": "logged",
+          "_x": 1000.0,
+          "_y": 500.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 40,
+          "_entityId": 1,
+          "_relationshipId": 39,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 41,
+          "_entityId": 26,
+          "_relationshipId": 39,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Generalization",
+          "_id": 43,
+          "_type": "p_e",
+          "_entityId": 7
+        },
+        {
+          "__type": "GeneralizationChild",
+          "_id": 44,
+          "_entityId": 13,
+          "_generalizationId": 43
+        },
+        {
+          "__type": "GeneralizationChild",
+          "_id": 45,
+          "_entityId": 20,
+          "_generalizationId": 43
+        }
+      ],
+      "itemsMap": {
+        "1": {
+          "__type": "Entity",
+          "_id": 1,
+          "_name": "user",
+          "_x": 500,
+          "_y": 0,
+          "_mag": false
+        },
+        "2": {
+          "__type": "Attribute",
+          "_id": 2,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -203,
+          "_y": 120
+        },
+        "3": {
+          "__type": "Attribute",
+          "_id": 3,
+          "_name": "nickname",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": 118,
+          "_y": -120
+        },
+        "4": {
+          "__type": "Attribute",
+          "_id": 4,
+          "_name": "email",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -166,
+          "_y": 120
+        },
+        "5": {
+          "__type": "Attribute",
+          "_id": 5,
+          "_name": "facebook_page",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -47,
+          "_y": 180
+        },
+        "6": {
+          "__type": "Attribute",
+          "_id": 6,
+          "_name": "sponsorship_fee",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": 192,
+          "_y": 0
+        },
+        "7": {
+          "__type": "Entity",
+          "_id": 7,
+          "_name": "picture",
+          "_x": 500,
+          "_y": 500,
+          "_mag": false
+        },
+        "8": {
+          "__type": "Attribute",
+          "_id": 8,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_1",
+          "_x": -103,
+          "_y": 180
+        },
+        "9": {
+          "__type": "Attribute",
+          "_id": 9,
+          "_name": "name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_1",
+          "_x": 206,
+          "_y": -180
+        },
+        "10": {
+          "__type": "Attribute",
+          "_id": 10,
+          "_name": "description",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "0_1",
+          "_x": -202,
+          "_y": 180
+        },
+        "11": {
+          "__type": "Attribute",
+          "_id": 11,
+          "_name": "keywords",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_N",
+          "_x": 137,
+          "_y": 0
+        },
+        "12": {
+          "__type": "Attribute",
+          "_id": 12,
+          "_name": "format",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 7,
+          "_cardinality": "1_1",
+          "_x": 93,
+          "_y": 0
+        },
+        "13": {
+          "__type": "Entity",
+          "_id": 13,
+          "_name": "video",
+          "_x": 1000,
+          "_y": 500,
+          "_mag": false
+        },
+        "14": {
+          "__type": "Attribute",
+          "_id": 14,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 96,
+          "_y": 180
+        },
+        "15": {
+          "__type": "Attribute",
+          "_id": 15,
+          "_name": "name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 121,
+          "_y": 0
+        },
+        "16": {
+          "__type": "Attribute",
+          "_id": 16,
+          "_name": "description",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "0_1",
+          "_x": 110,
+          "_y": 120
+        },
+        "17": {
+          "__type": "Attribute",
+          "_id": 17,
+          "_name": "keywords",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_N",
+          "_x": 111,
+          "_y": 120
+        },
+        "18": {
+          "__type": "Attribute",
+          "_id": 18,
+          "_name": "duration",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 73,
+          "_y": -180
+        },
+        "19": {
+          "__type": "Attribute",
+          "_id": 19,
+          "_name": "resolution",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 7,
+          "_y": 180
+        },
+        "20": {
+          "__type": "Entity",
+          "_id": 20,
+          "_name": "audio",
+          "_x": 1000,
+          "_y": 1000,
+          "_mag": false
+        },
+        "21": {
+          "__type": "Attribute",
+          "_id": 21,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_1",
+          "_x": -35,
+          "_y": 0
+        },
+        "22": {
+          "__type": "Attribute",
+          "_id": 22,
+          "_name": "name",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_1",
+          "_x": -105,
+          "_y": 0
+        },
+        "23": {
+          "__type": "Attribute",
+          "_id": 23,
+          "_name": "description",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "0_1",
+          "_x": -42,
+          "_y": 0
+        },
+        "24": {
+          "__type": "Attribute",
+          "_id": 24,
+          "_name": "keywords",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_N",
+          "_x": -136,
+          "_y": -120
+        },
+        "25": {
+          "__type": "Attribute",
+          "_id": 25,
+          "_name": "duration",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 20,
+          "_cardinality": "1_1",
+          "_x": 208,
+          "_y": 180
+        },
+        "26": {
+          "__type": "Entity",
+          "_id": 26,
+          "_name": "connection_log",
+          "_x": 1500,
+          "_y": 1000,
+          "_mag": false
+        },
+        "27": {
+          "__type": "Attribute",
+          "_id": 27,
+          "_name": "user_id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 26,
+          "_cardinality": "1_1",
+          "_x": 7,
+          "_y": -180
+        },
+        "28": {
+          "__type": "Attribute",
+          "_id": 28,
+          "_name": "connection_date",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 26,
+          "_cardinality": "1_1",
+          "_x": -156,
+          "_y": -180
+        },
+        "29": {
+          "__type": "Attribute",
+          "_id": 29,
+          "_name": "minutes_connected",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 26,
+          "_cardinality": "1_1",
+          "_x": -87,
+          "_y": -180
+        },
+        "30": {
+          "__type": "Relationship",
+          "_id": 30,
+          "_name": "provided",
+          "_x": 500.0,
+          "_y": 250.0
+        },
+        "31": {
+          "__type": "Participation",
+          "_id": 31,
+          "_entityId": 1,
+          "_relationshipId": 30,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "32": {
+          "__type": "Participation",
+          "_id": 32,
+          "_entityId": 7,
+          "_relationshipId": 30,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "33": {
+          "__type": "Relationship",
+          "_id": 33,
+          "_name": "provided",
+          "_x": 750.0,
+          "_y": 250.0
+        },
+        "34": {
+          "__type": "Participation",
+          "_id": 34,
+          "_entityId": 1,
+          "_relationshipId": 33,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "35": {
+          "__type": "Participation",
+          "_id": 35,
+          "_entityId": 13,
+          "_relationshipId": 33,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "36": {
+          "__type": "Relationship",
+          "_id": 36,
+          "_name": "provided",
+          "_x": 750.0,
+          "_y": 500.0
+        },
+        "37": {
+          "__type": "Participation",
+          "_id": 37,
+          "_entityId": 1,
+          "_relationshipId": 36,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "38": {
+          "__type": "Participation",
+          "_id": 38,
+          "_entityId": 20,
+          "_relationshipId": 36,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "39": {
+          "__type": "Relationship",
+          "_id": 39,
+          "_name": "logged",
+          "_x": 1000.0,
+          "_y": 500.0
+        },
+        "40": {
+          "__type": "Participation",
+          "_id": 40,
+          "_entityId": 1,
+          "_relationshipId": 39,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "41": {
+          "__type": "Participation",
+          "_id": 41,
+          "_entityId": 26,
+          "_relationshipId": 39,
+          "_tableId": null,
+          "_cardinality": "N_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "43": {
+          "__type": "Generalization",
+          "_id": 43,
+          "_type": "p_e",
+          "_entityId": 7
+        },
+        "44": {
+          "__type": "GeneralizationChild",
+          "_id": 44,
+          "_entityId": 13,
+          "_generalizationId": 43
+        },
+        "45": {
+          "__type": "GeneralizationChild",
+          "_id": 45,
+          "_entityId": 20,
+          "_generalizationId": 43
+        }
+      }
+    },
+    "edited": true,
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "selectedTool": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showRenamingRoleInput": false,
+    "showCardinalityMenu": false,
+    "showGeneralizationTypeMenu": false,
+    "showExportMenu": false
+  },
+  "erRestructuring": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showRenamingRoleInput": false,
+    "showMultivalueAttributeMenu": false,
+    "showCompositeAttributeMenu": false,
+    "showGeneralizationMenu": false
+  },
+  "erTranslation": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showOneToManyTypeBRelationshipMenu": false,
+    "showOneToOneTypeBRelationshipMenu": false,
+    "showOneToOneTypeCRelationshipMenu": false
+  },
+  "schemaDesign": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showDataTypeOptions": false,
+    "showReorderingMenu": false,
+    "showExportMenu": false
+  }
+}

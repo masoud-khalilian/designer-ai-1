@@ -1,0 +1,871 @@
+{
+  "_main": {
+    "step": "erDesign",
+    "restructuringHappened": false,
+    "draftSaved": true,
+    "showMenu": false,
+    "showModal": false,
+    "uid": 1
+  },
+  "erDesign": {
+    "model": {
+      "uid": 7,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [
+        {
+          "__type": "Entity",
+          "_id": 1,
+          "_name": "user",
+          "_x": 500,
+          "_y": 0,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 2,
+          "_name": "email",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -39,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 3,
+          "_name": "name",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": 20,
+          "_y": 120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 4,
+          "_name": "surname",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -170,
+          "_y": 120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 5,
+          "_name": "category",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -103,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 6,
+          "_name": "birth_date",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": 119,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 7,
+          "_name": "join_date",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -70,
+          "_y": 180
+        },
+        {
+          "__type": "Entity",
+          "_id": 8,
+          "_name": "membership_plan",
+          "_x": 500,
+          "_y": 500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 9,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 8,
+          "_cardinality": "1_1",
+          "_x": 7,
+          "_y": 180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 10,
+          "_name": "name",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 8,
+          "_cardinality": "1_1",
+          "_x": -23,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 11,
+          "_name": "cost",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 8,
+          "_cardinality": "1_1",
+          "_x": -70,
+          "_y": 120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 12,
+          "_name": "duration",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 8,
+          "_cardinality": "1_1",
+          "_x": 191,
+          "_y": -180
+        },
+        {
+          "__type": "Entity",
+          "_id": 13,
+          "_name": "call",
+          "_x": 1000,
+          "_y": 500,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 14,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 109,
+          "_y": 180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 15,
+          "_name": "title",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 41,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 16,
+          "_name": "alphanumeric_code",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 147,
+          "_y": -180
+        },
+        {
+          "__type": "Entity",
+          "_id": 17,
+          "_name": "call_participation",
+          "_x": 1000,
+          "_y": 1000,
+          "_mag": false
+        },
+        {
+          "__type": "Attribute",
+          "_id": 18,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 17,
+          "_cardinality": "1_1",
+          "_x": 132,
+          "_y": 120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 19,
+          "_name": "call",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 17,
+          "_cardinality": "1_1",
+          "_x": 24,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 20,
+          "_name": "user",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 17,
+          "_cardinality": "1_1",
+          "_x": 157,
+          "_y": -120
+        },
+        {
+          "__type": "Attribute",
+          "_id": 21,
+          "_name": "start_time",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 17,
+          "_cardinality": "1_1",
+          "_x": -179,
+          "_y": 0
+        },
+        {
+          "__type": "Attribute",
+          "_id": 22,
+          "_name": "device",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 17,
+          "_cardinality": "1_1",
+          "_x": 112,
+          "_y": -180
+        },
+        {
+          "__type": "Attribute",
+          "_id": 23,
+          "_name": "end_time",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 17,
+          "_cardinality": "0_1",
+          "_x": -176,
+          "_y": 120
+        },
+        {
+          "__type": "Relationship",
+          "_id": 24,
+          "_name": "participates_in",
+          "_x": 250.0,
+          "_y": 0.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 24,
+          "_name": "participates_in",
+          "_x": 750.0,
+          "_y": 250.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 25,
+          "_entityId": 1,
+          "_relationshipId": 24,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 26,
+          "_entityId": 13,
+          "_relationshipId": 24,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 27,
+          "_name": "has_membership",
+          "_x": 250.0,
+          "_y": 0.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 27,
+          "_name": "has_membership",
+          "_x": 500.0,
+          "_y": 250.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 28,
+          "_entityId": 1,
+          "_relationshipId": 27,
+          "_tableId": null,
+          "_cardinality": "0_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 29,
+          "_entityId": 8,
+          "_relationshipId": 27,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 30,
+          "_name": "participates_in_call",
+          "_x": 250.0,
+          "_y": 0.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 30,
+          "_name": "participates_in_call",
+          "_x": 750.0,
+          "_y": 500.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 31,
+          "_entityId": 1,
+          "_relationshipId": 30,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 32,
+          "_entityId": 17,
+          "_relationshipId": 30,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 33,
+          "_name": "participates_in_call",
+          "_x": 500.0,
+          "_y": 250.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 33,
+          "_name": "participates_in_call",
+          "_x": 1000.0,
+          "_y": 750.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 34,
+          "_entityId": 13,
+          "_relationshipId": 33,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 35,
+          "_entityId": 17,
+          "_relationshipId": 33,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Relationship",
+          "_id": 36,
+          "_name": "has_participation",
+          "_x": 500.0,
+          "_y": 250.0
+        },
+        {
+          "__type": "Relationship",
+          "_id": 36,
+          "_name": "has_participation",
+          "_x": 1000.0,
+          "_y": 750.0
+        },
+        {
+          "__type": "Participation",
+          "_id": 37,
+          "_entityId": 13,
+          "_relationshipId": 36,
+          "_tableId": null,
+          "_cardinality": "0_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        {
+          "__type": "Participation",
+          "_id": 38,
+          "_entityId": 17,
+          "_relationshipId": 36,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        }
+      ],
+      "itemsMap": {
+        "1": {
+          "__type": "Entity",
+          "_id": 1,
+          "_name": "user",
+          "_x": 500,
+          "_y": 0,
+          "_mag": false
+        },
+        "2": {
+          "__type": "Attribute",
+          "_id": 2,
+          "_name": "email",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -39,
+          "_y": -120
+        },
+        "3": {
+          "__type": "Attribute",
+          "_id": 3,
+          "_name": "name",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": 20,
+          "_y": 120
+        },
+        "4": {
+          "__type": "Attribute",
+          "_id": 4,
+          "_name": "surname",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -170,
+          "_y": 120
+        },
+        "5": {
+          "__type": "Attribute",
+          "_id": 5,
+          "_name": "category",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "1_1",
+          "_x": -103,
+          "_y": 0
+        },
+        "6": {
+          "__type": "Attribute",
+          "_id": 6,
+          "_name": "birth_date",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": 119,
+          "_y": 0
+        },
+        "7": {
+          "__type": "Attribute",
+          "_id": 7,
+          "_name": "join_date",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 1,
+          "_cardinality": "0_1",
+          "_x": -70,
+          "_y": 180
+        },
+        "8": {
+          "__type": "Entity",
+          "_id": 8,
+          "_name": "membership_plan",
+          "_x": 500,
+          "_y": 500,
+          "_mag": false
+        },
+        "9": {
+          "__type": "Attribute",
+          "_id": 9,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 8,
+          "_cardinality": "1_1",
+          "_x": 7,
+          "_y": 180
+        },
+        "10": {
+          "__type": "Attribute",
+          "_id": 10,
+          "_name": "name",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 8,
+          "_cardinality": "1_1",
+          "_x": -23,
+          "_y": -180
+        },
+        "11": {
+          "__type": "Attribute",
+          "_id": 11,
+          "_name": "cost",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 8,
+          "_cardinality": "1_1",
+          "_x": -70,
+          "_y": 120
+        },
+        "12": {
+          "__type": "Attribute",
+          "_id": 12,
+          "_name": "duration",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 8,
+          "_cardinality": "1_1",
+          "_x": 191,
+          "_y": -180
+        },
+        "13": {
+          "__type": "Entity",
+          "_id": 13,
+          "_name": "call",
+          "_x": 1000,
+          "_y": 500,
+          "_mag": false
+        },
+        "14": {
+          "__type": "Attribute",
+          "_id": 14,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 109,
+          "_y": 180
+        },
+        "15": {
+          "__type": "Attribute",
+          "_id": 15,
+          "_name": "title",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 41,
+          "_y": -180
+        },
+        "16": {
+          "__type": "Attribute",
+          "_id": 16,
+          "_name": "alphanumeric_code",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 13,
+          "_cardinality": "1_1",
+          "_x": 147,
+          "_y": -180
+        },
+        "17": {
+          "__type": "Entity",
+          "_id": 17,
+          "_name": "call_participation",
+          "_x": 1000,
+          "_y": 1000,
+          "_mag": false
+        },
+        "18": {
+          "__type": "Attribute",
+          "_id": 18,
+          "_name": "id",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 17,
+          "_cardinality": "1_1",
+          "_x": 132,
+          "_y": 120
+        },
+        "19": {
+          "__type": "Attribute",
+          "_id": 19,
+          "_name": "call",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 17,
+          "_cardinality": "1_1",
+          "_x": 24,
+          "_y": 0
+        },
+        "20": {
+          "__type": "Attribute",
+          "_id": 20,
+          "_name": "user",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 17,
+          "_cardinality": "1_1",
+          "_x": 157,
+          "_y": -120
+        },
+        "21": {
+          "__type": "Attribute",
+          "_id": 21,
+          "_name": "start_time",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 17,
+          "_cardinality": "1_1",
+          "_x": -179,
+          "_y": 0
+        },
+        "22": {
+          "__type": "Attribute",
+          "_id": 22,
+          "_name": "device",
+          "_identifier": true,
+          "_externalIdentifier": false,
+          "_parentId": 17,
+          "_cardinality": "1_1",
+          "_x": 112,
+          "_y": -180
+        },
+        "23": {
+          "__type": "Attribute",
+          "_id": 23,
+          "_name": "end_time",
+          "_identifier": false,
+          "_externalIdentifier": false,
+          "_parentId": 17,
+          "_cardinality": "0_1",
+          "_x": -176,
+          "_y": 120
+        },
+        "24": {
+          "__type": "Relationship",
+          "_id": 24,
+          "_name": "participates_in",
+          "_x": 750.0,
+          "_y": 250.0
+        },
+        "25": {
+          "__type": "Participation",
+          "_id": 25,
+          "_entityId": 1,
+          "_relationshipId": 24,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "26": {
+          "__type": "Participation",
+          "_id": 26,
+          "_entityId": 13,
+          "_relationshipId": 24,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "27": {
+          "__type": "Relationship",
+          "_id": 27,
+          "_name": "has_membership",
+          "_x": 500.0,
+          "_y": 250.0
+        },
+        "28": {
+          "__type": "Participation",
+          "_id": 28,
+          "_entityId": 1,
+          "_relationshipId": 27,
+          "_tableId": null,
+          "_cardinality": "0_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "29": {
+          "__type": "Participation",
+          "_id": 29,
+          "_entityId": 8,
+          "_relationshipId": 27,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "30": {
+          "__type": "Relationship",
+          "_id": 30,
+          "_name": "participates_in_call",
+          "_x": 750.0,
+          "_y": 500.0
+        },
+        "31": {
+          "__type": "Participation",
+          "_id": 31,
+          "_entityId": 1,
+          "_relationshipId": 30,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "32": {
+          "__type": "Participation",
+          "_id": 32,
+          "_entityId": 17,
+          "_relationshipId": 30,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "33": {
+          "__type": "Relationship",
+          "_id": 33,
+          "_name": "participates_in_call",
+          "_x": 1000.0,
+          "_y": 750.0
+        },
+        "34": {
+          "__type": "Participation",
+          "_id": 34,
+          "_entityId": 13,
+          "_relationshipId": 33,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "35": {
+          "__type": "Participation",
+          "_id": 35,
+          "_entityId": 17,
+          "_relationshipId": 33,
+          "_tableId": null,
+          "_cardinality": "1_1",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "36": {
+          "__type": "Relationship",
+          "_id": 36,
+          "_name": "has_participation",
+          "_x": 1000.0,
+          "_y": 750.0
+        },
+        "37": {
+          "__type": "Participation",
+          "_id": 37,
+          "_entityId": 13,
+          "_relationshipId": 36,
+          "_tableId": null,
+          "_cardinality": "0_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        },
+        "38": {
+          "__type": "Participation",
+          "_id": 38,
+          "_entityId": 17,
+          "_relationshipId": 36,
+          "_tableId": null,
+          "_cardinality": "1_N",
+          "_externalIdentifier": false,
+          "_role": ""
+        }
+      }
+    },
+    "edited": true,
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "selectedTool": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showRenamingRoleInput": false,
+    "showCardinalityMenu": false,
+    "showGeneralizationTypeMenu": false,
+    "showExportMenu": false
+  },
+  "erRestructuring": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showRenamingRoleInput": false,
+    "showMultivalueAttributeMenu": false,
+    "showCompositeAttributeMenu": false,
+    "showGeneralizationMenu": false
+  },
+  "erTranslation": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showOneToManyTypeBRelationshipMenu": false,
+    "showOneToOneTypeBRelationshipMenu": false,
+    "showOneToOneTypeCRelationshipMenu": false
+  },
+  "schemaDesign": {
+    "model": {
+      "uid": 1,
+      "erCode": "",
+      "sqlCode": "",
+      "itemsArray": [],
+      "itemsMap": {}
+    },
+    "sceneResetToken": 1703767601232,
+    "selectedItemId": null,
+    "oldRenamingValue": "",
+    "renamingValue": "",
+    "showRenamingInput": false,
+    "showDataTypeOptions": false,
+    "showReorderingMenu": false,
+    "showExportMenu": false
+  }
+}
