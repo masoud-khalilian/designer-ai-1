@@ -1,0 +1,24 @@
+Here is the ER model for the bookstore database:
+
+```
+entity Bookstore [
+    id (id),
+    address (multi)
+]
+
+entity Book [
+    isbn (id),
+    name (multi)
+]
+
+relationship Sells {
+    Bookstore : zero_many,
+    Book : one_many
+}
+```
+
+Explanation:
+
+*   The `Bookstore` entity has an `id` attribute that is the primary key, and an `address` attribute that can have multiple values.
+*   The `Book` entity has an `isbn` attribute that is the primary key, and a `name` attribute that can have multiple values.
+*   The `Sells` relationship connects `Bookstore` and `Book` entities. A `Bookstore` can sell zero or many `Book`s, and a `Book` can be sold by one or many `Bookstore`s.

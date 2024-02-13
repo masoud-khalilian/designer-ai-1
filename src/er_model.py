@@ -103,5 +103,5 @@ class ErModel():
         result = self.transform_items_array_to_map(json_array_content)
         place_holder["erDesign"]["model"]["itemsMap"] = result
 
-        with open(f'{file_name}.json', 'w') as new_file:
+        with open(f'{file_name}.er', 'w') as new_file:
             json.dump(place_holder, new_file, indent=2)

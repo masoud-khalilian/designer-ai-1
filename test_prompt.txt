@@ -1,27 +1,7 @@
 1-
-We want to create the database to monitor the chain of stores.
-each stores has a name.
-
+We want a to create a database for bookstore. each bookstore has addressa and unique id. each book has name and isbn and could be sell by many book store.
 
 2-
-We  want to create the database for a company that manages a chain of stores.
-The stores are identified by a unique code and are characterized by the name and type of goods sold by the store (for example clothing or furniture).
-The employees of the company are identified by a serial number and their name, surname and a certified e-mail address (if available) are known. Employees can be managers, administrative staff, and stock-tacker (that is, employees whose job is to take inventories). For managers the list of certifications held is known; for administrative staff the task is known, while for  stock-tackers we know the start and end date of the contract. 
-It is requested to keep track of the inventories made at each store and the stock-tacker who worked on it. For each inventory, it is known the the store where it is made, the start date, the end date, and the stock-tacker who managed the inventory. Note that each inventory is managed by only one stock-tacker, but each stock-tacker can manage multiple inventories.
-For each store it is also requested to keep track of the managers who supervised the store at each time period (start date, end date). Each store can be supervised by more than one manager at the same time, and each manager can supervise multiple stores or the same store at the same time in different time periods.  It is also requested to store whether or not a manager has encountered critical issues during the supervision of a store.
-
-3-
-We want a to create a database for bookstore. each bookstore has addressa and unique id.each book 
-has name and isbn and could be sell by many book store.
-
-4-
-This system is designed for use strictly by the employees of a hospital network.
-The network includes several locations.
-The database system should be able to query basic information about the hospital employees such as staff ID number, name, address, and phone number.
-The system should be able to query information about room and patient assignments for each employee of a department.
-The database should be able to store patient information for use by employees such as patient ID, name, location, room number, assigned staff, prescriptions, and invoices to generate reports. 
-
-5-
 We want to create the database for the consultation of historical books in a museum by some scholars.
 To consult the books each person must register at the museum and acquire a card. Persons are identified by the 
 identification code of the card; you also know the name, surname, a telephone number, an e-mail address, and the
@@ -36,3 +16,6 @@ the required book, and the state of wear of the book when withdrawn by the perso
 Consider that the same book can be consulted by at most one person on each day. Consider also that
 the same person can consult several different books in the same day and can consult the same book
 several times but on different dates.
+
+3-
+You are required to create a database for an online platform managing virtual calls. Design the Entity-Relationship diagram according to the following specifications:Each user is identified by the email and characterized by the name and surname.The user can be categorized as guest or registered. For registered users the birth date and the join date to the platform is recorded. The platform provides several membership plans. Each plan is characterized by the name, cost, and duration (e.g, montly, annual). For each registered user the current membership plan and the date of purchase are recorded.Calls are identified by an alphanumeric code and characterized by a title.You want to store call partecipations in the database. The partecipations are characterized by the call, the user, the date and start time when the user joined the call, the device used for the connection (e.g., mobile, desktop) and the end time, when the user leaves the call (if available). Consider that (1) each user can be participate only to one call in the same time period and (2) different users can participate to the same call."

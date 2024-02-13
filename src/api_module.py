@@ -12,14 +12,22 @@ class Call_Api(Process):
         super().__init__('call open ai api')
         load_dotenv()
         self.open_api_key = os.getenv("API_KEY")
-        self.open_router_api_key = os.getenv("OPEN_ROUTER_KEY")
+        self.open_router_api_key = os.getenv("OPEN_ROUTER_KEY_DESGINER")
 
+<<<<<<< HEAD
     def call_gpt3(self, prompt, system_prompt, custom_model="gpt-4") -> str:
+=======
+    def call_gpt3(self, prompt, system_prompt, custom_model="gpt-3.5-turbo-1106", temperature=0.1) -> str:
+>>>>>>> 15b34452f7498f31fcbdae96ecc40ff8239041a2
         client = OpenAI(api_key=self.open_api_key)
 
         completion = client.chat.completions.create(
             model=custom_model,
+<<<<<<< HEAD
             temperature=0.001,
+=======
+            temperature=temperature,
+>>>>>>> 15b34452f7498f31fcbdae96ecc40ff8239041a2
             messages=[
                 {"role": "system", "content": f'{system_prompt}'},
                 {"role": "user", "content": f'{prompt}'}
@@ -29,45 +37,20 @@ class Call_Api(Process):
         self.answer = completion.choices[0].message.content
         return completion.choices[0].message.content
 
-    def call_llama_2_70b(self, prompt="", system_prompt="") -> str:
+    def call_open_router(self, model_name="", prompt="", temperature=0) -> str:
         headers = {
             'Authorization': f'Bearer {self.open_router_api_key}',
         }
         response = requests.post(
             url="https://openrouter.ai/api/v1/chat/completions",
             headers=headers,
-            data=json.dumps({
-                "model": "meta-llama/llama-2-70b-chat",  # Optional
-                "messages": [
-                    {"role": "user", "content": prompt},
-                    {"role": "system", "content": system_prompt}
-                ]
-            })
-        )
-        if response.status_code == 200:
-            try:
-                json_response = response.json()
-                return json_response['choices'][0]['message']['content']
-            except json.JSONDecodeError as e:
-                print(f"Failed to parse JSON response. Error: {e}")
-        else:
-            print(f"Error: {response.status_code}")
-            print(response.text)
-        return ''
 
-    def call_mistral(self, prompt="", system_prompt="") -> str:
-        headers = {
-            'Authorization': f'Bearer {self.open_router_api_key}',
-        }
-        response = requests.post(
-            url="https://openrouter.ai/api/v1/chat/completions",
-            headers=headers,
             data=json.dumps({
-                "model": "mistralai/mistral-7b-instruct",  # Optional
+                "model": model_name,  # Optional
                 "messages": [
                     {"role": "user", "content": prompt},
-                    {"role": "system", "content": system_prompt}
-                ]
+                ],
+                "temperature": temperature
             })
         )
         if response.status_code == 200:

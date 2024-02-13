@@ -1,3 +1,4 @@
+import json
 import re
 import random
 import numpy as np
@@ -18,17 +19,17 @@ def find_relation_id(name, data):
 
 
 def map_to_enum_format(value):
-    if value == "one..one":
+    if value == "one..one" or value == "one_one":
         return "1_1"
-    elif value == "zero..one":
+    elif value == "zero..one" or value == "zero_one":
         return "0_1"
-    elif value == "zero..zero":
+    elif value == "zero..zero" or value == "zero_zero":
         return "0_0"
-    elif value == "one..many":
+    elif value == "one..many" or value == "one_many":
         return "1_N"
-    elif value == "many..many":
+    elif value == "many..many" or value == "many_many":
         return "N_N"
-    elif value == "zero..many":
+    elif value == "zero..many" or value == "zero_many":
         return "0_N"
     # Add more cases as needed
     else:
@@ -36,13 +37,13 @@ def map_to_enum_format(value):
 
 
 def map_general_type(value):
-    if value == "partial, exclusive":
+    if value == "partial, exclusive" or "partial_exclusive":
         return "p_e"
-    elif value == "partial, overlapping":
+    elif value == "partial, overlapping" or "overlapping":
         return "p_o"
-    elif value == "total, exclusive":
+    elif value == "total, exclusive" or "exclusive_total":
         return "t_e"
-    elif value == "total, overlapping":
+    elif value == "total, overlapping" or "overlapping_total":
         return "t_o"
     # Add more cases as needed
     else:
@@ -50,6 +51,7 @@ def map_general_type(value):
 
 
 def extract_name_relations(text):
+
     parts = text.split(':')
     if len(parts) == 2:
         name = parts[0].strip()
@@ -158,7 +160,7 @@ def process_tuple_relations(input_tuple, enity_data):
     x = [0 for i in range(100)]
     y = [0 for i in range(100)]
     for attribute in attribute_list:
-        last_element_id_global = last_element_id_global+1
+        last_element_id_global = last_element_id_global + 1
         name, rel_type, is_external = extract_name_relations(attribute)
         parent_id = find_entity_id(name, data=enity_data)
         for i in enity_data:
@@ -191,15 +193,14 @@ def process_tuple_relations(input_tuple, enity_data):
 
 def extract_entities(input_string):
     global last_element_id_global
-    pattern = r'\bentity\s+(\w+)\s*({([^}]*)})?'
-    matches = re.findall(pattern, input_string)
+    entity_pattern = r'entity\s+(\w+)\s+\[\s*(.*?)\s*\]'
+    matches = re.findall(entity_pattern, input_string)
+    entity_data = matches
+    # for match in matches:
+    #     entity_name = match[0].strip()
+    #     brace_content = match[2].strip() if match[2] else None
+    #     entity_data.append((entity_name, brace_content))
 
-    entity_data = []
-
-    for match in matches:
-        entity_name = match[0].strip()
-        brace_content = match[2].strip() if match[2] else None
-        entity_data.append((entity_name, brace_content))
     current_position = [0, 0]
     obj_entity_list = np.array([])
     number = 2
@@ -227,15 +228,14 @@ def extract_entities(input_string):
 
 def extract_relations(input_string, e_data):
     global last_element_id_global
-    pattern = r'\brelationship\s+(\w+)\s*\(([^)]*)\)'
+    pattern = r'\brelationship\s+(\w+)\s*\{([^}]*)\}'
     matches = re.findall(pattern, input_string)
-
     relation_data = []
 
     for match in matches:
-        word = match[0]
-        curly_braces_structure = match[1].strip()
-        relation_data.append((word, curly_braces_structure))
+        relation_name = match[0]
+        entity_cardinalities = match[1].strip()
+        relation_data.append((relation_name, entity_cardinalities))
 
     obj_entity_list = np.array([])
     for rels in enumerate(relation_data):
@@ -290,19 +290,22 @@ def extract_relation_attribute(input_string, e_data):
 
 def extract_gerneralization(input_string, e_data):
     global last_element_id_global
-    pattern = r'(\w+)\s*<=\s*{\s*([^}]*)\s*}\s*\(([^)]*)\)'
-    matches = re.finditer(pattern, input_string)
-
+    # pattern = r'(\w+)\s*<=\s*{\s*([^}]*)\s*}\s*\(([^)]*)\)'
+    # matches = re.finditer(pattern, input_string)
+    # pattern = r'generalization\s+([\w\s]+)\s*\[([^]]+)\]'
+    pattern = r'\bgeneralization\s+(\w+)\s*\[([^]]*)\]'
+    matches = re.findall(pattern, input_string)
     results = []
 
     for match in matches:
-        parent_entity = match.group(1)
-        entities = [entity.strip() for entity in match.group(2).split(',')]
-        entity_type = match.group(3)
+        parent_entity = match[0]
+        entities = [entity.strip() for entity in match[1].split(',')]
+        first_entity = entities[0]
+        first_entity_type = re.search(r'\((.*?)\)', first_entity)
         result = {
             "parent_entity": parent_entity,
             "entities": entities,
-            "type": entity_type
+            "type": first_entity_type
         }
         last_element_id_global = last_element_id_global + 1
         general_id = last_element_id_global
@@ -315,6 +318,11 @@ def extract_gerneralization(input_string, e_data):
         }
         general_childs = []
         for g_child in result["entities"]:
+            g_child = g_child.split(" ")[0]
+            # find the child if does not exist pass
+            c_entity = find_entity_id(g_child, e_data)
+            if c_entity == None:
+                continue
             last_element_id_global = last_element_id_global + 1
             child = {
                 "__type": "GeneralizationChild",
@@ -330,7 +338,7 @@ def extract_gerneralization(input_string, e_data):
     return results if results else None
 
 
-class ArrayGenerator():
+class CustomArrayGenerator():
     global last_element_id_global
     last_element_id_global = 1
 
@@ -341,10 +349,15 @@ class ArrayGenerator():
     def transform_er_code(self):
         array_json = np.array([])
         er_code = self.er_code
+        er_code = re.findall(r'```(.*?)```', er_code, re.DOTALL)
+        if len(er_code) > 1:
+            er_code = er_code[0]
+        else:
+            er_code = self.er_code
+
         er_code = er_code.replace("\n", " ")
         er_code = re.sub(r'\s+', ' ', er_code)
         er_code = re.sub(r'/\*.*?\*/', '', er_code, flags=re.DOTALL)
-
         entities_attributes = extract_entities(er_code)
         array_json = np.append(array_json, entities_attributes)
 
