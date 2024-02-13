@@ -14,20 +14,12 @@ class Call_Api(Process):
         self.open_api_key = os.getenv("API_KEY")
         self.open_router_api_key = os.getenv("OPEN_ROUTER_KEY_DESGINER")
 
-<<<<<<< HEAD
-    def call_gpt3(self, prompt, system_prompt, custom_model="gpt-4") -> str:
-=======
     def call_gpt3(self, prompt, system_prompt, custom_model="gpt-3.5-turbo-1106", temperature=0.1) -> str:
->>>>>>> 15b34452f7498f31fcbdae96ecc40ff8239041a2
         client = OpenAI(api_key=self.open_api_key)
 
         completion = client.chat.completions.create(
             model=custom_model,
-<<<<<<< HEAD
-            temperature=0.001,
-=======
             temperature=temperature,
->>>>>>> 15b34452f7498f31fcbdae96ecc40ff8239041a2
             messages=[
                 {"role": "system", "content": f'{system_prompt}'},
                 {"role": "user", "content": f'{prompt}'}
